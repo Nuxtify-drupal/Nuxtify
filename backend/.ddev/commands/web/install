@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+usage() {
+  echo "Usage: $( basename -- "$0") [-y]"
+  echo "  -y: Assume 'yes' as the answer to all prompts and run non-interactively."
+  exit 1
+}
+
+while test $# != 0
+do
+    case "$1" in
+    -y) ASSUME_YES=1 ;;
+    *)  usage ;;
+    esac
+    shift
+done
+
+
+if [ ! -d "vendor/" ]; then
+  ./.ddev/commands/web/build
+fi
+
+cd web || exit 1
+DRUSH="../vendor/bin/drush"
+
+if [ -n "$ASSUME_YES" ]; then
+  IS_SURE="y"
+else
+  IFS= read -r -p "Are you sure you want to install the dev dependencies? [y/N] " IS_SURE
+fi
+
+if [ "$IS_SURE" == "y" ] || [ "$IS_SURE" == "Y" ]; then
+  "$DRUSH" site-install minimal -y --account-name=root
+else
+  exit 0
+fi

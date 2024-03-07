@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -n "$IS_DDEV_PROJECT" ]; then
+  composer install
+else
+  composer install --no-dev
+fi
