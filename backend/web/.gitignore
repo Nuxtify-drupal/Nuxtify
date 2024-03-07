@@ -1,0 +1,25 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+sites/*/services*.yml
+
+# Ignore paths that contain user-generated content.
+sites/*/files/
+sites/*/private/
+
+# Ignore multi-site test environment.
+sites/simpletest/
+
+# Ignore scaffolded files.
+/autoload.php
+/index.php
+/.ht.router.php
+/.htaccess
+/robots.txt
+/README.md
+/INSTALL.txt
+/modules/README.txt
+/themes/README.txt
+/profiles/README.txt
+/sites/README.txt
+/.eslintrc.json
+/sites/development.services.yml
