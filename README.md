@@ -1,6 +1,6 @@
 # Drupal Decoupled Profile
 
-A brief description of the project.
+This project serves as a quickstart profile for integrating Drupal and Nuxt 3, allowing them to communicate with each other. It provides a foundation for building dynamic and interactive web applications.
 
 ## Table of Contents
 
