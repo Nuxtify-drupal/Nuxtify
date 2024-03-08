@@ -16,7 +16,6 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "dobefu/nuxtify": "1.0.x-dev",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10"
     },

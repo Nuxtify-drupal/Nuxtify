@@ -21,7 +21,7 @@ To install the Drupal backend for this project, you can use DDEV, a local develo
 2. Once DDEV is installed, navigate to the project directory in your terminal:
 
 ```
-cd drupal-decoupled-profile/backend
+cd drupal-decoupled-profile
 ```
 
 3. Run the following command to install the Drupal backend:
