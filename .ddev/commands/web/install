@@ -29,8 +29,8 @@ else
   IFS= read -r -p "Are you sure you want to install the dev dependencies? [y/N] " IS_SURE
 fi
 
-if [ "$IS_SURE" == "y" ] || [ "$IS_SURE" == "Y" ]; then
-  "$DRUSH" site-install minimal -y --account-name=root
-else
+if [ "$IS_SURE" != "y" ] && [ "$IS_SURE" != "Y" ]; then
   exit 0
 fi
+
+"$DRUSH" site-install nuxtify -y --account-name=root
