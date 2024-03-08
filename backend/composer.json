@@ -1,5 +1,5 @@
 {
-    "name": "drupal/recommended-project",
+    "name": "dobefu/nuxtify",
     "description": "Project template for Drupal projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
@@ -16,8 +16,9 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "dobefu/nuxtify": "1.0.x-dev",
         "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "^10.2"
+        "drupal/core-recommended": "^10"
     },
     "require-dev": {
         "drush/drush": "^12.4"
@@ -25,15 +26,15 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "drupal/core-composer-scaffold": true
         },
         "sort-packages": true
     },

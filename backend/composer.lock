@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f9a5ace696bfc41d94c4c834573f99d",
+    "content-hash": "300e88087c26a86d221319808ecf7b46",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -287,6 +287,80 @@
                 }
             ],
             "time": "2023-08-31T09:50:34+00:00"
+        },
+        {
+            "name": "dobefu/nuxtify",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nuxtify",
+                "reference": "d0e39cd37f73800982311bc89536b00d1ca2e90f"
+            },
+            "conflict": {
+                "drupal/drupal": "*"
+            },
+            "require-dev": {
+                "composer/installers": "^2.0",
+                "drupal/core-composer-scaffold": "^10.2",
+                "drupal/core-dev": "^10.2",
+                "drush/drush": "^12.4"
+            },
+            "default-branch": true,
+            "type": "drupal-profile",
+            "extra": {
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "web/"
+                    }
+                },
+                "installer-paths": {
+                    "web/core": [
+                        "type:drupal-core"
+                    ],
+                    "web/libraries/{$name}": [
+                        "type:drupal-library"
+                    ],
+                    "web/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "web/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "web/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ],
+                    "drush/Commands/contrib/{$name}": [
+                        "type:drupal-drush"
+                    ],
+                    "web/modules/custom/{$name}": [
+                        "type:drupal-custom-module"
+                    ],
+                    "web/profiles/custom/{$name}": [
+                        "type:drupal-custom-profile"
+                    ],
+                    "web/themes/custom/{$name}": [
+                        "type:drupal-custom-theme"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Connor van Spronssen",
+                    "homepage": "https://www.drupal.org/u/dobefu",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Quickly build a decoupled Drupal site with Nuxt 3 and GraphQL",
+            "homepage": "https://www.drupal.org/project/nuxtify",
+            "support": {
+                "issues": "https://drupal.org/project/issues/nuxtify",
+                "source": "https://git.drupalcode.org/project/nuxtify"
+            },
+            "time": "2024-03-08T13:19:03+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -6066,8 +6140,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "dobefu/nuxtify": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
