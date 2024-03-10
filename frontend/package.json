@@ -1,0 +1,26 @@
+{
+  "name": "nuxtify-frontend",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.8.0",
+    "@nuxtjs/i18n": "^8.1.1",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "eslint": "^8.57.0",
+    "nuxt": "^3.10.3",
+    "nuxt-graphql-middleware": "^4.0.0",
+    "pnpm": "^8.15.4"
+  }
+}

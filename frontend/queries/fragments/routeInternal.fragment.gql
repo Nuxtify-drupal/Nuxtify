@@ -1,0 +1,7 @@
+#import "~/queries/fragments/nodes/nodeBasicPage.fragment.gql"
+
+fragment routeInternal on RouteInternal {
+  entity {
+    ...nodeBasicPage
+  }
+}

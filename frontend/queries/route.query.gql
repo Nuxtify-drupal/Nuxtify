@@ -1,0 +1,7 @@
+#import "~/queries/fragments/routeInternal.fragment.gql"
+
+query route($path: String!, $langcode: String!) {
+  route(path: $path, langcode: $langcode) {
+    ...routeInternal
+  }
+}

@@ -1,0 +1,10 @@
+fragment paragraphTitle on ParagraphTitle {
+  __typename
+  title
+  composition {
+    position {
+      parentId
+      region
+    }
+  }
+}

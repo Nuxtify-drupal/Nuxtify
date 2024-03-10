@@ -1,0 +1,14 @@
+fragment paragraphLayout on ParagraphLayout {
+  __typename
+  id
+  composition {
+    layout {
+      id
+      regions
+    }
+    position {
+      parentId
+      region
+    }
+  }
+}

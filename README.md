@@ -6,6 +6,7 @@ This project serves as a quickstart profile for integrating Drupal and Nuxt 3, a
 
 - [Installation](#installation)
   - [Backend (Drupal)](#backend-drupal)
+  - [Frontend (Nuxt)](#frontend-nuxt)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -37,6 +38,10 @@ This command will automatically set up the necessary dependencies and configurat
 ```
 ddev launch
 ```
+
+### Frontend (Nuxt)
+
+TODO
 
 ## Usage
 

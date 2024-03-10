@@ -1,0 +1,12 @@
+fragment paragraphTextarea on ParagraphTextarea {
+  __typename
+  content {
+    processed
+  }
+  composition {
+    position {
+      parentId
+      region
+    }
+  }
+}

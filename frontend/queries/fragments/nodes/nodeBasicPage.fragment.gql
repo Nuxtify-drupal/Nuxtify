@@ -1,0 +1,14 @@
+#import "~/queries/fragments/paragraphs/paragraphLayout.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphTitle.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphSubtitle.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphTextarea.fragment.gql"
+
+fragment nodeBasicPage on NodeBasicPage {
+  title
+  layout {
+    ...paragraphLayout
+    ...paragraphTitle
+    ...paragraphSubtitle
+    ...paragraphTextarea
+  }
+}
