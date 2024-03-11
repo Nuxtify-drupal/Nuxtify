@@ -20,7 +20,7 @@ const { data } = await useAsyncData(
 )
 
 if (data.value?.data?.route === null)
-  showError({ statusCode: 404 })
+  showError({ statusCode: 404, statusMessage: 'Not Found' })
 
 const page = ref<NodeUnion | undefined>(undefined)
 let layout = reactive<LayoutSection[]>([])
@@ -40,6 +40,16 @@ const unwatchData = watch(data, () => {
 onBeforeRouteUpdate((to, from) => {
   if (to.fullPath !== from.fullPath)
     unwatchData()
+})
+
+useHead({
+  title: page.value?.title,
+  meta: [
+    {
+      name: 'description',
+      content: '', // TODO: Add description
+    },
+  ],
 })
 </script>
 

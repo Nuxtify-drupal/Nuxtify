@@ -33,4 +33,12 @@ if [ "$IS_SURE" != "y" ] && [ "$IS_SURE" != "Y" ]; then
   exit 0
 fi
 
-"$DRUSH" site-install nuxtify -y --account-name=root
+"$DRUSH" site:install nuxtify -y --site-name="Nuxtify" --account-name=root
+
+if [ ! -f "../frontend/.env" ]; then
+  cp ../frontend/.env.example ../frontend/.env
+fi
+
+API_KEY="$("$DRUSH" sql:query "SELECT api_key FROM users_field_data WHERE name='GraphQL API';")"
+
+sed -e "s/BACKEND_API_KEY=\".*/BACKEND_API_KEY=\"$API_KEY\"/" -i ../frontend/.env

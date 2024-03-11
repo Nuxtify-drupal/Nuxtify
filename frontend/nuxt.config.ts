@@ -40,8 +40,8 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: 'en',
     locales: [
-      { code: 'en', iso: 'en-US' },
-      { code: 'nl', iso: 'nl-NL' },
+      { code: 'en', iso: 'en' },
+      { code: 'nl', iso: 'nl' },
     ],
   },
 
