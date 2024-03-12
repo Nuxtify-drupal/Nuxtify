@@ -1,6 +1,7 @@
-.PHONY: install build watch lint
+.PHONY: install build watch lint analyze
 
 export PATH := $(PATH)
+export NODE_TLS_REJECT_UNAUTHORIZED := 0
 
 default: build
 
@@ -14,7 +15,10 @@ build: _pnpm
 	@pnpm run build
 
 watch: _pnpm
-	@NODE_TLS_REJECT_UNAUTHORIZED=0 pnpm run dev
+	pnpm run dev
 
 lint: _pnpm
 	@pnpm run lint
+
+analyze: _pnpm
+	@pnpm run analyze

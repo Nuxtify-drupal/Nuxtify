@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "analyze": "nuxt analyze"
   },
   "dependencies": {
     "vue": "^3.4.21",
