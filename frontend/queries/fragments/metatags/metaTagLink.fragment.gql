@@ -1,0 +1,7 @@
+fragment metaTagLink on MetaTagLink {
+  tag
+  attributes {
+    href
+    rel
+  }
+}

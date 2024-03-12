@@ -1,3 +1,7 @@
+#import "~/queries/fragments/metatags/metatagLink.fragment.gql"
+#import "~/queries/fragments/metatags/metatagValue.fragment.gql"
+#import "~/queries/fragments/metatags/metatagProperty.fragment.gql"
+
 #import "~/queries/fragments/paragraphs/paragraphLayout.fragment.gql"
 #import "~/queries/fragments/paragraphs/paragraphTitle.fragment.gql"
 #import "~/queries/fragments/paragraphs/paragraphSubtitle.fragment.gql"
@@ -5,6 +9,11 @@
 
 fragment nodeBasicPage on NodeBasicPage {
   title
+  metatag {
+    ...metaTagLink
+    ...metaTagValue
+    ...metaTagProperty
+  }
   layout {
     ...paragraphLayout
     ...paragraphTitle

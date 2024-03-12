@@ -14,9 +14,6 @@ useHead({
   bodyAttrs: {
     class: 'absolute inset-0 flex flex-col',
   },
-  link: [
-    ...(i18nHead.value.link || []),
-  ],
   meta: [
     ...(i18nHead.value.meta || []),
   ],

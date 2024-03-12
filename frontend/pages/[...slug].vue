@@ -2,6 +2,8 @@
 import type { NodeUnion, RouteInternal } from '#build/graphql-operations'
 import type { LayoutSection } from '~/types/layout-section'
 
+const config = useRuntimeConfig()
+
 const route = useRoute()
 const { locale } = useI18n()
 
@@ -42,19 +44,39 @@ onBeforeRouteUpdate((to, from) => {
     unwatchData()
 })
 
+const { meta, link } = (page.value?.metatag ?? []).reduce(
+  (acc, tag) => {
+    const tagType = tag.tag as keyof typeof acc
+    const tagAttributes = { ...tag.attributes }
+
+    if ('rel' in tagAttributes && tagAttributes.rel === 'canonical')
+      tagAttributes.href = config.public.baseUrl + tagAttributes.href
+
+    if (tagType in acc)
+      acc[tagType].push(tagAttributes)
+
+    return acc
+  },
+  {
+    meta: [] as any[],
+    link: [] as any[],
+    value: [] as any[],
+  },
+)
+
 useHead({
   title: page.value?.title,
   meta: [
-    {
-      name: 'description',
-      content: '', // TODO: Add description
-    },
+    ...meta,
+  ],
+  link: [
+    ...link,
   ],
 })
 </script>
 
 <template>
-  <div class="max-w-5xl m-auto flex flex-col gap-8">
+  <div class="flex flex-col max-w-5xl gap-8 m-auto">
     <BasePageTitle>
       {{ page?.title }}
     </BasePageTitle>

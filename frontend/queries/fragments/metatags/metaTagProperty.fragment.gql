@@ -1,0 +1,7 @@
+fragment metaTagProperty on MetaTagProperty {
+  tag
+  attributes {
+    property
+    content
+  }
+}

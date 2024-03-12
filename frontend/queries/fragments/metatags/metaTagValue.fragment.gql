@@ -1,0 +1,7 @@
+fragment metaTagValue on MetaTagValue {
+  tag
+  attributes {
+    name
+    content
+  }
+}
