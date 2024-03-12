@@ -11,6 +11,9 @@ useHead({
     lang: i18nHead.value.htmlAttrs!.lang,
     dir: i18nHead.value.htmlAttrs!.dir,
   },
+  bodyAttrs: {
+    class: 'absolute inset-0 flex flex-col',
+  },
   link: [
     ...(i18nHead.value.link || []),
   ],
@@ -23,10 +26,10 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col justify-between min-h-screen gap-8">
+  <div class="flex flex-col justify-between flex-1 gap-8">
     <LayoutHeader />
 
-    <main class="relative flex-1 w-full mx-auto px-4">
+    <main class="relative flex-1 w-full px-4 mx-auto">
       <slot />
     </main>
 

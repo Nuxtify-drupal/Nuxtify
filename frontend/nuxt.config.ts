@@ -37,6 +37,15 @@ export default defineNuxtConfig({
     'nuxt-graphql-middleware',
   ],
 
+  tailwindcss: {
+    editorSupport: true,
+    config: {
+      content: [
+        './nuxt.config.ts',
+      ],
+    },
+  },
+
   i18n: {
     defaultLocale: 'en',
     locales: [
