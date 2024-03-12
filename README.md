@@ -1,4 +1,4 @@
-# Drupal Decoupled Profile
+# Nuxtify
 
 This project serves as a quickstart profile for integrating Drupal and Nuxt 3, allowing them to communicate with each other. It provides a foundation for building dynamic and interactive web applications.
 
@@ -22,7 +22,7 @@ To install the Drupal backend for this project, you can use DDEV, a local develo
 2. Once DDEV is installed, navigate to the project directory in your terminal:
 
 ```
-cd drupal-decoupled-profile
+cd nuxtify
 ```
 
 3. Run the following command to install the Drupal backend:
@@ -41,11 +41,35 @@ ddev launch
 
 ### Frontend (Nuxt)
 
-TODO
+To set up the frontend (Nuxt) for this project, you will need to have Node.js installed on your system. Make sure to use the version that is in the [.nvmrc](./frontend/.nvmrc) file.
+
+[NVM](https://github.com/nvm-sh/nvm) can be used to manage Node.js versions. Install NVM by following the instructions in the [NVM GitHub repository](https://github.com/nvm-sh/nvm#installation-and-update). Once NVM is installed, you can run `nvm use` in the `frontend` directory to use the correct version automatically.
+
+1. Run the following command to install dependencies:
+
+```bash
+make install
+```
 
 ## Usage
 
-TODO
+To run the frontend locally, run the following command:
+
+```bash
+make watch
+```
+
+To check the frontend code for linting errors, run the following command:
+
+```bash
+make lint
+```
+
+To build the project, run the following command:
+
+```bash
+make
+```
 
 ## Contributing
 

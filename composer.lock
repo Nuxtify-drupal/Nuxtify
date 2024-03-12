@@ -294,7 +294,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "dce28f4f92440534c2ebcc499535a49c2664d00d"
+                "reference": "c6ac7d36c7661902a9be992b492eecdd462952b5"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -364,7 +364,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-03-11T15:23:43+00:00"
+            "time": "2024-03-12T10:48:02+00:00"
         },
         {
             "name": "doctrine/annotations",
