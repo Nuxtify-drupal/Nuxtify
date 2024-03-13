@@ -11,6 +11,11 @@ export default defineNuxtConfig({
     },
   },
 
+  typescript: {
+    strict: true,
+    typeCheck: true,
+  },
+
   runtimeConfig: {
     public: {
       siteName: process.env.NUXT_PUBLIC_SITE_NAME,
@@ -31,6 +36,8 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {},
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
@@ -47,6 +54,13 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    bundle: {
+      dropMessageCompiler: true,
+      fullInstall: false,
+    },
+    customBlocks: {
+      defaultSFCLang: 'yaml',
+    },
     defaultLocale: 'en',
     locales: [
       { code: 'en', iso: 'en' },

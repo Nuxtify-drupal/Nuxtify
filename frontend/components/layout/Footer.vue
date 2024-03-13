@@ -35,7 +35,7 @@ watch(
   </footer>
 </template>
 
-<i18n lang="yaml">
+<i18n lang="yaml" scoped>
 en:
   language: 'Language'
   english: 'English'

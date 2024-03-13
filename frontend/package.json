@@ -22,6 +22,8 @@
     "eslint": "^8.57.0",
     "nuxt": "^3.10.3",
     "nuxt-graphql-middleware": "^4.0.0",
-    "pnpm": "^8.15.4"
+    "pnpm": "^8.15.4",
+    "typescript": "^5.4.2",
+    "vue-tsc": "^1"
   }
 }
