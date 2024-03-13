@@ -23,10 +23,10 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col justify-between flex-1 gap-8">
+  <div class="flex flex-col justify-between flex-1 gap-8 px-8">
     <LayoutHeader />
 
-    <main class="relative flex-1 w-full px-4 mx-auto">
+    <main class="relative flex-1 w-full mx-auto">
       <slot />
     </main>
 

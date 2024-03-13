@@ -39,8 +39,8 @@ const unwatchData = watch(data, () => {
   setPageData()
 })
 
-onBeforeRouteUpdate((to, from) => {
-  if (to.fullPath !== from.fullPath)
+onBeforeRouteLeave((to, from) => {
+  if (to.name !== from.name)
     unwatchData()
 })
 
