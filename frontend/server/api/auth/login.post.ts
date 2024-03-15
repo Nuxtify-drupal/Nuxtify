@@ -1,7 +1,7 @@
 import process from 'node:process'
-import { eventHandler, readBody } from 'h3'
+import { type H3Event, eventHandler, readBody } from 'h3'
 
-export default eventHandler(async (event) => {
+export default eventHandler(async (event: H3Event) => {
   const body = await readBody(event)
 
   const token = await $fetch(`${process.env.NUXT_PUBLIC_BACKEND_URL}/session/token`)
