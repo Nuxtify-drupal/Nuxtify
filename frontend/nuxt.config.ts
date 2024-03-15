@@ -38,10 +38,20 @@ export default defineNuxtConfig({
 
   routeRules: {},
 
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
+    },
+    minify: true,
+  },
+
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/i18n',
     'nuxt-graphql-middleware',
+    'nuxt-icon',
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
   ],
 
   tailwindcss: {
@@ -51,21 +61,6 @@ export default defineNuxtConfig({
         './nuxt.config.ts',
       ],
     },
-  },
-
-  i18n: {
-    bundle: {
-      dropMessageCompiler: true,
-      fullInstall: false,
-    },
-    customBlocks: {
-      defaultSFCLang: 'yaml',
-    },
-    defaultLocale: 'en',
-    locales: [
-      { code: 'en', iso: 'en' },
-      { code: 'nl', iso: 'nl' },
-    ],
   },
 
   graphqlMiddleware: {
@@ -87,5 +82,20 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  i18n: {
+    bundle: {
+      dropMessageCompiler: true,
+      fullInstall: false,
+    },
+    customBlocks: {
+      defaultSFCLang: 'yaml',
+    },
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', iso: 'en' },
+      { code: 'nl', iso: 'nl' },
+    ],
   },
 })

@@ -76,7 +76,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col max-w-5xl gap-8 m-auto">
+  <div class="flex flex-col max-w-6xl gap-8 m-auto">
     <BasePageTitle>
       {{ page?.title }}
     </BasePageTitle>

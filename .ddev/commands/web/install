@@ -16,6 +16,7 @@ do
 done
 
 
+# If the site is not yet built, build it
 if [ ! -d "vendor/" ]; then
   ./.ddev/commands/web/build
 fi
@@ -23,24 +24,40 @@ fi
 cd web || exit 1
 DRUSH="../vendor/bin/drush"
 
+# If the user has passed the -y flag, assume they want to (re)install the site
 if [ -n "$ASSUME_YES" ]; then
   IS_SURE="y"
 else
   IFS= read -r -p "Are you sure you want to install the dev dependencies? [y/N] " IS_SURE
 fi
 
+# If the user is not sure, exit
 if [ "$IS_SURE" != "y" ] && [ "$IS_SURE" != "Y" ]; then
   exit 0
 fi
 
+# Create the keys directory if it does not exist
+if [ ! -d "../keys" ]; then
+  mkdir ../keys
+fi
+
+# Generate keys for JWT
+head -c 64 /dev/urandom | base64 -w 0 > ../keys/jwt.key.txt
+
+# Install the site
 "$DRUSH" site:install nuxtify -y --site-name="Nuxtify" --account-name=root
 
+
+# If the .env file does not exist, copy the example file
 if [ ! -f "../frontend/.env" ]; then
   cp ../frontend/.env.example ../frontend/.env
 fi
 
+# Get authentication keys
 API_KEY="$("$DRUSH" sql:query "SELECT api_key FROM users_field_data WHERE name='GraphQL API';")"
 
+# Update the .env file with the authentication keys
 sed -e "s/BACKEND_API_KEY=\".*/BACKEND_API_KEY=\"$API_KEY\"/" -i ../frontend/.env
 
+# Generate a login link
 "$DRUSH" user:login

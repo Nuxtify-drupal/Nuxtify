@@ -5,13 +5,15 @@ const localePath = useLocalePath()
 
 <template>
   <header>
-    <div class="max-w-5xl py-8 m-auto border-b">
+    <div class="flex items-center justify-between max-w-6xl gap-8 py-8 m-auto border-b">
       <NuxtLink
         class="text-2xl font-semibold"
         :to="localePath('/')"
       >
         {{ config.public.siteName }}
       </NuxtLink>
+
+      <BaseAuthBtns />
     </div>
   </header>
 </template>

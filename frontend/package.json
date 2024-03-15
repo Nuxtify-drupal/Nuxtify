@@ -19,9 +19,12 @@
     "@antfu/eslint-config": "^2.8.0",
     "@nuxtjs/i18n": "^8.1.1",
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/nuxt": "^10.9.0",
     "eslint": "^8.57.0",
     "nuxt": "^3.10.3",
     "nuxt-graphql-middleware": "^4.0.0",
+    "nuxt-icon": "^0.6.9",
     "pnpm": "^8.15.4",
     "typescript": "^5.4.2",
     "vue-tsc": "^1"
