@@ -29,11 +29,3 @@ definePageMeta({
     </div>
   </div>
 </template>
-
-<i18n lang="yaml" scoped>
-en:
-  logout: Log out
-
-nl:
-  logout: Uitloggen
-</i18n>

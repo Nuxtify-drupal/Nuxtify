@@ -13,12 +13,15 @@ async function login(e: SubmitEvent) {
   isLoading.value = true
 
   try {
-    await signIn(
+    const { error } = await signIn(
       email.value,
       password.value,
     )
 
-    navigateTo(localePath('/user'))
+    if (error)
+      throw error
+
+    return navigateTo(localePath('/user'))
   }
   catch (error) {
     console.error(error)
@@ -59,6 +62,7 @@ useHead({
         v-model="email"
         :label="t('email')"
         name="email"
+        autofocus
         required
       />
 
@@ -78,15 +82,3 @@ useHead({
     </BaseForm>
   </div>
 </template>
-
-<i18n lang="yaml" scoped>
-en:
-  login: Log in
-  email: Email
-  password: Password
-
-nl:
-  login: Inloggen
-  email: E-mail
-  password: Wachtwoord
-</i18n>

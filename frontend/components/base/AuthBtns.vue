@@ -3,25 +3,43 @@ const { getUser, isAuthenticated } = useAuth()
 const { t } = useI18n()
 const localePath = useLocalePath()
 
-const user = computedAsync(async () => {
-  return isAuthenticated.value ? await getUser() : undefined
-})
+const user = ref<User | undefined>(undefined)
+
+const isUserLoading = ref(true)
+
+watch(
+  () => isAuthenticated.value,
+  async () => {
+    const userData = isAuthenticated.value ? await getUser() : undefined
+
+    isUserLoading.value = false
+
+    user.value = userData
+  },
+  {
+    immediate: true,
+  },
+)
 </script>
 
 <template>
   <div class="font-semibold">
     <ClientOnly>
-      <template #fallback>
-        <div class="relative w-16 max-w-full">
-        &nbsp;
-          <SkeletonPlaceholderSingle
-            class="absolute inset-0"
-            height="1rem"
-          />
-        </div>
-      </template>
+      <div
+        v-if="isUserLoading"
+        class="relative w-16 max-w-full"
+      >
+      &nbsp;
+        <SkeletonPlaceholderSingle
+          class="absolute inset-0"
+          height="1rem"
+        />
+      </div>
 
-      <div v-if="user" class="flex gap-6">
+      <div
+        v-if="!isUserLoading && user"
+        class="flex gap-6"
+      >
         <NuxtLink
           class="flex items-center gap-1"
           :to="localePath('/user')"
@@ -40,7 +58,7 @@ const user = computedAsync(async () => {
       </div>
 
       <NuxtLink
-        v-else
+        v-if="!isUserLoading && !user"
         class="flex items-center gap-1"
         :to="localePath('/user/login')"
       >
@@ -50,13 +68,3 @@ const user = computedAsync(async () => {
     </ClientOnly>
   </div>
 </template>
-
-<i18n lang="yaml" scoped>
-en:
-  login: Log in
-  logout: Log out
-
-nl:
-  login: Inloggen
-  logout: Uitloggen
-</i18n>

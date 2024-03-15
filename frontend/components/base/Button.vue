@@ -30,11 +30,3 @@ const { t } = useI18n()
     <slot />
   </button>
 </template>
-
-<i18n lang="yaml" scoped>
-en:
-  loading: Loading...
-
-nl:
-  loading: Laden...
-</i18n>

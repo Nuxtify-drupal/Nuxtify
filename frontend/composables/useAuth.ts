@@ -1,7 +1,3 @@
-interface User {
-  name: string
-}
-
 export default function useAuth() {
   const user = useState<User | undefined>('user', undefined)
 
@@ -30,6 +26,13 @@ export default function useAuth() {
   }
 
   const signIn = async (email: string, password: string) => {
+    if (!email.length || !password.length) {
+      return {
+        data: null,
+        error: new Error('Email and password are required'),
+      }
+    }
+
     try {
       const response = await $fetch('/api/auth/login', {
         method: 'POST',
@@ -38,6 +41,8 @@ export default function useAuth() {
         },
         body: JSON.stringify({ email, password }),
       })
+
+      await getUser()
 
       return {
         data: response,

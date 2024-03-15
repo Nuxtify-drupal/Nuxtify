@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   label: {
     type: String,
     default: '',
@@ -12,6 +12,10 @@ defineProps({
     type: String,
     default: '',
   },
+  autofocus: {
+    type: Boolean,
+    default: false,
+  },
   required: {
     type: Boolean,
     default: false,
@@ -19,6 +23,13 @@ defineProps({
 })
 
 const model = defineModel()
+
+const input = ref<HTMLInputElement | null>(null)
+
+onMounted(() => {
+  if (props.autofocus)
+    input.value?.focus()
+})
 </script>
 
 <template>
@@ -27,10 +38,12 @@ const model = defineModel()
       {{ label }}
 
       <input
+        ref="input"
         v-model="model"
         class="block w-full px-4 py-3 text-sm border rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
         :type="type"
         :name="name"
+        :autofocus="(input && autofocus) || undefined"
         :required="required"
       >
     </BaseLabel>

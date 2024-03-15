@@ -18,6 +18,7 @@ watch(
       <span class="text-sm">
         {{ config.public.siteName }} &copy; {{ new Date().getFullYear() }}
       </span>
+
       <BaseSelect
         v-model="locale"
         :label="t('language')"
@@ -34,15 +35,3 @@ watch(
     </div>
   </footer>
 </template>
-
-<i18n lang="yaml" scoped>
-en:
-  language: 'Language'
-  english: 'English'
-  dutch: 'Dutch'
-
-nl:
-  language: 'Taal'
-  english: 'Engels'
-  dutch: 'Nederlands'
-</i18n>

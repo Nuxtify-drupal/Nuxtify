@@ -89,13 +89,15 @@ export default defineNuxtConfig({
       dropMessageCompiler: true,
       fullInstall: false,
     },
-    customBlocks: {
-      defaultSFCLang: 'yaml',
-    },
     defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+    },
+    langDir: 'i18n',
     locales: [
-      { code: 'en', iso: 'en' },
-      { code: 'nl', iso: 'nl' },
+      { code: 'en', iso: 'en', file: 'en.yml' },
+      { code: 'nl', iso: 'nl', file: 'nl.yml' },
     ],
+    strategy: 'prefix_except_default',
   },
 })
