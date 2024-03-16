@@ -5,7 +5,7 @@ const localePath = useLocalePath()
 
 <template>
   <header>
-    <div class="flex items-center justify-between max-w-6xl gap-8 py-8 m-auto border-b">
+    <div class="flex items-center justify-between max-w-6xl gap-8 py-4 sm:py-8 m-auto border-b">
       <NuxtLink
         class="text-2xl font-semibold"
         :to="localePath('/')"

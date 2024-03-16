@@ -3,25 +3,27 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 
 const isLoading = ref(false)
-const { signIn } = useAuth()
+const { signUp } = useAuth()
 
 const email = ref('')
 const password = ref('')
+const password_confirm = ref('')
 
-async function login(e: SubmitEvent) {
+async function register(e: SubmitEvent) {
   e.preventDefault()
   isLoading.value = true
 
   try {
-    const { error } = await signIn(
+    const { error } = await signUp(
       email.value,
       password.value,
+      password_confirm.value,
     )
 
     if (error)
       throw error
 
-    return navigateTo(localePath('/user'))
+    return navigateTo(localePath('/user/register/confirm'))
   }
   catch (error) {
     console.error(error)
@@ -38,11 +40,11 @@ definePageMeta({
 })
 
 useHead({
-  title: t('login'),
+  title: t('register'),
   meta: [
     {
       name: 'description',
-      content: t('login'),
+      content: t('register'),
     },
   ],
 })
@@ -52,10 +54,10 @@ useHead({
   <div class="flex flex-col max-w-6xl gap-8 m-auto">
     <BaseForm
       method="POST"
-      @submit.prevent="login"
+      @submit.prevent="register"
     >
       <BasePageTitle>
-        {{ t('login') }}
+        {{ t('register') }}
       </BasePageTitle>
 
       <BaseInput
@@ -63,8 +65,6 @@ useHead({
         :label="t('email')"
         type="email"
         name="email"
-        autocapitalize="off"
-        autocorrect="off"
         autocomplete="email"
         autofocus
         required
@@ -73,22 +73,30 @@ useHead({
       <BaseInput
         v-model="password"
         :label="t('password')"
-        type="password"
         name="password"
+        type="password"
+        required
+      />
+
+      <BaseInput
+        v-model="password_confirm"
+        :label="t('password_confirm')"
+        name="password_confirm"
+        type="password"
         required
       />
 
       <BaseButton
         :loading="isLoading"
       >
-        {{ t('login') }}
+        {{ t('register') }}
       </BaseButton>
 
       <NuxtLink
         class="text-center text-blue-600"
-        :to="localePath('/user/register')"
+        :to="localePath('/user/login')"
       >
-        {{ t('login_register_link') }}
+        {{ t('register_login_link') }}
       </NuxtLink>
     </BaseForm>
   </div>

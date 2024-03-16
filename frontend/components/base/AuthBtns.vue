@@ -57,14 +57,26 @@ watch(
         </NuxtLink>
       </div>
 
-      <NuxtLink
+      <div
         v-if="!isUserLoading && !user"
-        class="flex items-center gap-1"
-        :to="localePath('/user/login')"
+        class="flex gap-6"
       >
-        <Icon name="uil:signin" />
-        {{ t('login') }}
-      </NuxtLink>
+        <NuxtLink
+          class="flex items-center gap-1"
+          :to="localePath('/user/login')"
+        >
+          <Icon name="uil:signin" />
+          {{ t('login') }}
+        </NuxtLink>
+
+        <NuxtLink
+          class="flex items-center gap-1"
+          :to="localePath('/user/register')"
+        >
+          <Icon name="uil:user-plus" />
+          {{ t('register') }}
+        </NuxtLink>
+      </div>
     </ClientOnly>
   </div>
 </template>

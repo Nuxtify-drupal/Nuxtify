@@ -14,7 +14,7 @@ const emit = defineEmits([
 <template>
   <form
     :method="method"
-    class="flex flex-col w-full max-w-2xl gap-8 p-8 m-auto my-8 border-t border-b"
+    class="flex flex-col w-full max-w-2xl gap-8 p-8 mx-auto"
     @submit.prevent="(e) => emit('submit', e)"
   >
     <slot />

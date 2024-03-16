@@ -7,3 +7,9 @@ login: Inloggen
 logout: Uitloggen
 email: E-mail
 password: Wachtwoord
+password_confirm: Bevestig wachtwoord
+login_register_link: Nog geen account? Registreer hier.
+register_login_link: Al een account? Log hier in.
+register: Registreren
+register_email_confirm: Bevestig e-mail
+register_email_confirm_text: Bevestig je e-mailadres door op de link in de e-mail te klikken die we je zojuist hebben gestuurd.

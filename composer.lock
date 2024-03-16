@@ -294,7 +294,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "361d3fcc1e1767041e29a69239b6ef539c476e8e"
+                "reference": "e02976e03ebbc498cfbd36132a2163dfd124affe"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -309,7 +309,8 @@
                 "drupal/pathauto": "^1.12",
                 "drupal/r4032login": "^2.2",
                 "drupal/restui": "^1.21",
-                "drupal/string_field_formatter": "^2.0"
+                "drupal/string_field_formatter": "^2.0",
+                "drupal/user_registrationpassword": "^2.0"
             },
             "require-dev": {
                 "composer/installers": "^2.0",
@@ -367,7 +368,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-03-15T13:48:11+00:00"
+            "time": "2024-03-16T20:29:03+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2302,6 +2303,66 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/typed_data",
                 "issues": "https://www.drupal.org/project/issues/typed_data"
+            }
+        },
+        {
+            "name": "drupal/user_registrationpassword",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/user_registrationpassword.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/user_registrationpassword-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "ba33dacc0f1e5ee310a973f821090f7bf48a7f4c"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1676877573",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "intrafusion",
+                    "homepage": "https://www.drupal.org/user/424800"
+                },
+                {
+                    "name": "jide",
+                    "homepage": "https://www.drupal.org/user/146088"
+                },
+                {
+                    "name": "Rob C",
+                    "homepage": "https://www.drupal.org/user/313382"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Customize the destination that a user is redirected to after logging in or logged out.",
+            "homepage": "https://www.drupal.org/project/user_registrationpassword",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/user_registrationpassword",
+                "issues": "http://drupal.org/project/issues/user_registrationpassword"
             }
         },
         {

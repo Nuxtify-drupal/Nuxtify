@@ -7,3 +7,9 @@ login: Log in
 logout: Log out
 email: Email
 password: Password
+password_confirm: Confirm password
+login_register_link: No account yet? Register here.
+register_login_link: Already have an account? Log in here.
+register: Register
+register_email_confirm: Confirm email
+register_email_confirm_text: Confirm your email address by clicking the link in the email we just sent you.

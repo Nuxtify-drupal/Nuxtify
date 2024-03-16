@@ -14,7 +14,7 @@ watch(
 
 <template>
   <footer>
-    <div class="flex justify-between max-w-6xl py-8 m-auto text-gray-600 border-t">
+    <div class="flex justify-between max-w-6xl py-4 sm:py-8 m-auto text-gray-600 border-t">
       <span class="text-sm">
         {{ config.public.siteName }} &copy; {{ new Date().getFullYear() }}
       </span>
