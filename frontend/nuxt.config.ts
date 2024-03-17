@@ -59,6 +59,7 @@ export default defineNuxtConfig({
     config: {
       content: [
         './nuxt.config.ts',
+        './plugins/**/*.ts',
       ],
     },
   },

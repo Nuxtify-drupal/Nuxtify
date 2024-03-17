@@ -7,22 +7,29 @@ const localePath = useLocalePath()
 const { timestamp, uid, token } = route.params
 const { verify } = useAuth()
 
-try {
-  const { error } = await verify(
-    timestamp as string,
-    uid as string,
-    token as string,
-  )
+const toast = useToast()
 
-  if (error) {
+if (process.client) {
+  try {
+    const { error } = await verify(
+      timestamp as string,
+      uid as string,
+      token as string,
+    )
+
+    if (error) {
+      navigateTo(localePath('/user/login'))
+      throw error
+    }
+
+    if (process.client)
+      toast.success(t('register_email_confirm_success'))
+
     navigateTo(localePath('/user/login'))
-    throw error
   }
-
-  navigateTo(localePath('/user/login'))
-}
-catch (error) {
-  console.error(error)
+  catch (error) {
+    console.error(error)
+  }
 }
 
 definePageMeta({
