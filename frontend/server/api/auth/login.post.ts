@@ -10,7 +10,7 @@ export default eventHandler(async (event: H3Event) => {
     return new Response('Unauthorized', { status: 401 })
 
   try {
-    const response = await fetch(`${process.env.NUXT_PUBLIC_BACKEND_URL}/user/login?_format=json`, {
+    const response = await $fetch.raw(`${process.env.NUXT_PUBLIC_BACKEND_URL}/user/login?_format=json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +23,6 @@ export default eventHandler(async (event: H3Event) => {
     })
 
     if (!response || response.status !== 200) {
-      console.error(response)
       return {
         error: {
           statusCode: response.status,
@@ -31,22 +30,22 @@ export default eventHandler(async (event: H3Event) => {
       }
     }
 
-    const userData = await response.json()
-    const cookies = response.headers.getSetCookie()
-    const cookieHeader = cookies.join('; ')
+    const userData: {
+      current_user: {
+        uid: string
+        name: string
+      }
+      csrf_token: string
+      logout_token: string
+      access_token: string
+    } = response._data as any
 
-    const jwtToken: {
-      token: string
-    } = await $fetch(`${process.env.NUXT_PUBLIC_BACKEND_URL}/jwt/token?_format=json`, {
-      headers: {
-        Cookie: cookieHeader,
-      },
-    })
-
-    setCookie(event, 'auth.token', jwtToken.token)
+    setCookie(event, 'auth.token', userData.access_token)
     setCookie(event, 'auth.uid', userData.current_user.uid)
 
-    return jwtToken
+    return {
+      token: userData.access_token,
+    }
   }
   catch (error) {
     return new Response('Unauthorized', { status: 401 })
