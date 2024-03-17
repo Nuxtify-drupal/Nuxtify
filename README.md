@@ -71,10 +71,6 @@ To build the project, run the following command:
 make
 ```
 
-## Contributing
-
-TODO
-
 ## License
 
 The project is licensed under the MIT License, which is a permissive open-source license. This means that you are free to use, modify, and distribute the code for both commercial and non-commercial purposes. The license also comes with limited liability and warranty, so use the code at your own risk. For more details, please refer to the [LICENSE](./LICENSE) file.
