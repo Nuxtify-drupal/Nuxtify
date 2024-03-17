@@ -8,6 +8,8 @@ const { signIn } = useAuth()
 const email = ref('')
 const password = ref('')
 
+const toast = useToast()
+
 async function login(e: SubmitEvent) {
   e.preventDefault()
   isLoading.value = true
@@ -23,8 +25,20 @@ async function login(e: SubmitEvent) {
 
     return navigateTo(localePath('/user'))
   }
-  catch (error) {
+  catch (error: any) {
     console.error(error)
+
+    if (process.client) {
+      switch (error?.message) {
+        case '403':
+          toast.error(t('login_error_credentials'))
+          break
+
+        default:
+          toast.error(t('login_error_generic'))
+          break
+      }
+    }
   }
   finally {
     isLoading.value = false

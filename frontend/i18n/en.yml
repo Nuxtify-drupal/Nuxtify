@@ -8,6 +8,8 @@ logout: Log out
 email: Email
 password: Password
 password_confirm: Confirm password
+login_error_credentials: Incorrect email or password
+login_error_generic: An error occurred while logging in. Please try again later.
 login_register_link: No account yet? Register here.
 register_login_link: Already have an account? Log in here.
 register: Register

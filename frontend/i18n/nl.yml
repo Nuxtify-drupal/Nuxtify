@@ -8,6 +8,8 @@ logout: Uitloggen
 email: E-mail
 password: Wachtwoord
 password_confirm: Bevestig wachtwoord
+login_error_credentials: Onjuist e-mailadres of wachtwoord
+login_error_generic: Er is een fout opgetreden tijdens het inloggen. Probeer het later opnieuw.
 login_register_link: Nog geen account? Registreer hier.
 register_login_link: Al een account? Log hier in.
 register: Registreren

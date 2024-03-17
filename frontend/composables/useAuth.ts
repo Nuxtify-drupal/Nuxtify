@@ -43,6 +43,13 @@ export default function useAuth() {
         body: JSON.stringify({ email, password }),
       })
 
+      if ('error' in response) {
+        return {
+          data: null,
+          error: new Error(response.error?.statusCode?.toString() ?? '500'),
+        }
+      }
+
       await getUser()
 
       return {

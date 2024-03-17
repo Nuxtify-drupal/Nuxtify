@@ -22,8 +22,14 @@ export default eventHandler(async (event: H3Event) => {
       }),
     })
 
-    if (!response || response.status !== 200)
-      return new Response('Unauthorized', { status: 401 })
+    if (!response || response.status !== 200) {
+      console.error(response)
+      return {
+        error: {
+          statusCode: response.status,
+        },
+      }
+    }
 
     const userData = await response.json()
     const cookies = response.headers.getSetCookie()
