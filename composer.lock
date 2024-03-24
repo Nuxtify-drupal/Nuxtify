@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23bfbd8442403fe52f90eaa843838af3",
+    "content-hash": "b634b91bd1ff04e765b974355ba7086a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -941,7 +941,7 @@
         },
         {
             "name": "dobefu/nuxtify_profile",
-            "version": "1.0.x-dev",
+            "version": "1.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
@@ -968,7 +968,6 @@
                 "composer/installers": "^2.0",
                 "drupal/core-dev": "^10.2"
             },
-            "default-branch": true,
             "type": "drupal-profile",
             "extra": {
                 "installer-name": "nuxtify",
@@ -7772,9 +7771,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "dobefu/nuxtify_profile": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
