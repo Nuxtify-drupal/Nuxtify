@@ -1,6 +1,7 @@
-export default function useAuth() {
-  const user = useState<User | undefined>('user', undefined)
+export default async function useAuth() {
   const { locale } = useI18n()
+
+  const user = useState<User | undefined>('user')
 
   const getUser = async (): Promise<User | undefined> => {
     const uid = useCookie('auth.uid')
@@ -10,7 +11,7 @@ export default function useAuth() {
       return
 
     try {
-      user.value = await $fetch('/api/auth/session', {
+      const userData: User | undefined = await $fetch('/api/auth/session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,10 +22,14 @@ export default function useAuth() {
         }),
       })
 
-      return user.value
+      return userData
     }
     catch (error) {}
   }
+
+  await callOnce(async () => {
+    user.value = await getUser()
+  })
 
   const signIn = async (email: string, password: string) => {
     if (!email.length || !password.length) {
@@ -50,7 +55,7 @@ export default function useAuth() {
         }
       }
 
-      await getUser()
+      user.value = await getUser()
 
       return {
         data: response,
@@ -162,14 +167,11 @@ export default function useAuth() {
     user.value = undefined
   }
 
-  const isAuthenticated = computed(() => !!user.value)
-
   return {
-    getUser,
+    user,
     signIn,
     signUp,
     verify,
     signOut,
-    isAuthenticated,
   }
 }

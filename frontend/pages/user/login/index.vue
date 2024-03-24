@@ -3,7 +3,7 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 
 const isLoading = ref(false)
-const { signIn } = useAuth()
+const { signIn } = await useAuth()
 
 const email = ref('')
 const password = ref('')

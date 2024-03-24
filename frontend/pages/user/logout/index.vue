@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const localePath = useLocalePath()
 
-const { signOut } = useAuth()
+const { signOut } = await useAuth()
 
 await signOut()
 navigateTo(localePath('/user/login'))

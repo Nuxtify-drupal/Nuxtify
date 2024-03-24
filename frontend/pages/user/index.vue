@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const { getUser } = useAuth()
+const { user } = await useAuth()
 const { t } = useI18n()
 const localePath = useLocalePath()
-
-const user = await getUser()
 
 definePageMeta({
   auth: {

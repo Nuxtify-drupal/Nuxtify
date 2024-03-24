@@ -945,13 +945,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "75b3252b8ea4b56bfd3d58c6a8272fcadd38b68d"
+                "reference": "fc3ac9966e9167ea4741a0b524d346be1a12d251"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
                 "drupal/field_group": "^3.4",
                 "drupal/gin": "^3.0@RC",
-                "drupal/graphql": "^4.6",
+                "drupal/graphql": "^4.7",
                 "drupal/graphql_compose": "^2.0",
                 "drupal/jwt": "^2.0",
                 "drupal/key_auth": "^2.1",
@@ -1019,7 +1019,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-03-23T15:56:24+00:00"
+            "time": "2024-03-24T09:34:06+00:00"
         },
         {
             "name": "doctrine/annotations",

@@ -5,7 +5,7 @@ const route = useRoute()
 const localePath = useLocalePath()
 
 const { timestamp, uid, token } = route.params
-const { verify } = useAuth()
+const { verify } = await useAuth()
 
 const toast = useToast()
 
