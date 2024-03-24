@@ -16,3 +16,4 @@ register: Register
 register_email_confirm: Confirm email
 register_email_confirm_text: Confirm your email address by clicking the link in the email we just sent you.
 register_email_confirm_success: Your email address has been confirmed. You can now log in.
+member_since: Member since

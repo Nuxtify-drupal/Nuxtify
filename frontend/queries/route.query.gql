@@ -1,7 +1,11 @@
-#import "~/queries/fragments/routeInternal.fragment.gql"
+#import "~/queries/fragments/nodes/nodeBasicPage.fragment.gql"
 
 query route($path: String!, $langcode: String!) {
   route(path: $path, langcode: $langcode) {
-    ...routeInternal
+    ... on RouteInternal {
+      entity {
+        ...nodeBasicPage
+      }
+    }
   }
 }

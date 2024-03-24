@@ -28,7 +28,7 @@ const page = ref<NodeUnion | undefined>(undefined)
 let layout = reactive<LayoutSection[]>([])
 
 function setPageData() {
-  page.value = (data.value?.data?.route as RouteInternal)?.entity || undefined
+  page.value = (data.value?.data?.route as RouteInternal)?.entity as NodeUnion || undefined
 
   layout = formatLayout(page.value?.layout || [])
 }

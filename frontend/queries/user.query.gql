@@ -1,0 +1,14 @@
+query user($path: String!, $langcode: String!) {
+  route(path: $path, langcode: $langcode) {
+    ... on RouteInternal {
+      entity {
+        ... on User {
+          name
+          created {
+            timestamp
+          }
+        }
+      }
+    }
+  }
+}

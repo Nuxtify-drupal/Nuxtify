@@ -8,15 +8,23 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  to: {
+    type: String,
+    default: undefined,
+  },
 })
 
 const { t } = useI18n()
+
+const NuxtLink = resolveComponent('NuxtLink')
 </script>
 
 <template>
-  <button
+  <component
+    :is="to ? NuxtLink : 'button'"
     class="px-4 py-3 text-sm font-semibold text-white transition-colors bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
     :disabled="loading || undefined"
+    :to="to || undefined"
   >
     <span
       v-if="loading"
@@ -28,5 +36,5 @@ const { t } = useI18n()
       />
     </span>
     <slot />
-  </button>
+  </component>
 </template>
