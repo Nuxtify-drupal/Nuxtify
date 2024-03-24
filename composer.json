@@ -45,6 +45,9 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/robots.txt": "drupal-scaffold/robots.txt"
             }
         },
         "installer-paths": {
