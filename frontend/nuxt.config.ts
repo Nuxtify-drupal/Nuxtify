@@ -36,7 +36,12 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {},
+  routeRules: {
+    '/api/**': {
+      robots: false,
+      sitemap: false,
+    },
+  },
 
   nitro: {
     compressPublicAssets: {
@@ -52,6 +57,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
+    '@nuxtjs/seo',
   ],
 
   tailwindcss: {
@@ -100,5 +106,33 @@ export default defineNuxtConfig({
       { code: 'nl', iso: 'nl', file: 'nl.yml' },
     ],
     strategy: 'prefix_except_default',
+  },
+
+  robots: {
+    allow: [
+      '/user/login',
+      '/user/register',
+    ],
+    disallow: [
+      '/api/*',
+      '/user',
+    ],
+  },
+
+  sitemap: {
+    cacheMaxAgeSeconds: 3600,
+    sources: [
+      '/api/sitemap',
+    ],
+    exclude: [
+      '/api/**',
+      '/user',
+      '/user/logout',
+      '/user/register/confirm',
+    ],
+    xslColumns: [
+      { label: 'URL', width: '67%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '33%' },
+    ],
   },
 })

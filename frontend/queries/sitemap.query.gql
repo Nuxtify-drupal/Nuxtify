@@ -1,0 +1,16 @@
+query sitemap($first: Int!, $langcode: String!, $after: Cursor!) {
+  nodeBasicPages(first: $first, langcode: $langcode, after: $after) {
+    edges {
+      node {
+        path
+        changed {
+          time
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
