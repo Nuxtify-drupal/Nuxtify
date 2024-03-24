@@ -1,4 +1,3 @@
-import process from 'node:process'
 import type { SitemapQuery } from '#build/graphql-operations'
 
 export default defineEventHandler(async (_event) => {

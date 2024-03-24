@@ -58,6 +58,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
     '@nuxtjs/seo',
+    'nuxt-security',
   ],
 
   tailwindcss: {
@@ -134,5 +135,11 @@ export default defineNuxtConfig({
       { label: 'URL', width: '67%' },
       { label: 'Last Modified', select: 'sitemap:lastmod', width: '33%' },
     ],
+  },
+
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
   },
 })
