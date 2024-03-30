@@ -19,7 +19,8 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "dobefu/nuxtify_profile": "1.0.0-alpha2",
+        "cweagans/composer-patches": "~1.0",
+        "dobefu/nuxtify_profile": "^1.0.x-dev",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10"
     },
@@ -37,7 +38,8 @@
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
-            "drupal/core-composer-scaffold": true
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -78,6 +80,11 @@
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
+        },
+        "patches": {
+            "drupal/graphql_compose_preview": {
+                "3437140 - Unable to install module in installation profile": "https://git.drupalcode.org/project/graphql_compose_preview/-/merge_requests/3.diff"
+            }
         }
     }
 }

@@ -8,7 +8,8 @@ variables:
   LANGUAGE: en_US.UTF-8
   LC_ALL: en_US.UTF-8
 
-default:
+deploy:
+  stage: deploy
   tags:
     - gitlab-org
   before_script:
@@ -35,9 +36,6 @@ default:
     - apt install -y lsb-release
     - echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
     - apt install -y php8.2-{apcu,bcmath,cli,common,curl,dom,gd,intl,mbstring,mcrypt,mysql,opcache,xmlrpc,zip}
-
-deploy:
-  stage: deploy
   script:
     # Download Composer
     - ./scripts/get-composer.sh
@@ -83,10 +81,9 @@ deploy:
 
     # Restart the PM2 process for the frontend
     - ssh "$SSH_USER"@"$SSH_HOST" -T ". ~/.profile && pm2 startOrGracefulReload ecosystem.config.js --update-env > /dev/null"
-
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: never
-    - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "feat/ci"
-    - when: always
-    - allow_failure: false
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: always
+      allow_failure: false

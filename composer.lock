@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b634b91bd1ff04e765b974355ba7086a",
+    "content-hash": "2d921c73fb65b24eb1cdb980a0ac4858",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -865,6 +865,54 @@
             "time": "2022-12-06T17:57:16+00:00"
         },
         {
+            "name": "cweagans/composer-patches",
+            "version": "1.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cweagans/composer-patches.git",
+                "reference": "e190d4466fe2b103a55467dfa83fc2fecfcaf2db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/e190d4466fe2b103a55467dfa83fc2fecfcaf2db",
+                "reference": "e190d4466fe2b103a55467dfa83fc2fecfcaf2db",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0 || ~2.0",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "cweagans\\Composer\\Patches"
+            },
+            "autoload": {
+                "psr-4": {
+                    "cweagans\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cameron Eagans",
+                    "email": "me@cweagans.net"
+                }
+            ],
+            "description": "Provides a way to patch Composer packages.",
+            "support": {
+                "issues": "https://github.com/cweagans/composer-patches/issues",
+                "source": "https://github.com/cweagans/composer-patches/tree/1.7.3"
+            },
+            "time": "2022-12-20T22:53:13+00:00"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.2",
             "source": {
@@ -941,11 +989,11 @@
         },
         {
             "name": "dobefu/nuxtify_profile",
-            "version": "1.0.0-alpha2",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "c38cfb879d39cf987efd52b3845ad6d8ad9c7917"
+                "reference": "d1066c79f19ce078c4e8141b1f5d22d0fcfc833a"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -953,6 +1001,7 @@
                 "drupal/gin": "^3.0@RC",
                 "drupal/graphql": "^4.7",
                 "drupal/graphql_compose": "^2.0",
+                "drupal/graphql_compose_preview": "^1.0@beta",
                 "drupal/jwt": "^2.0",
                 "drupal/key_auth": "^2.1",
                 "drupal/layout_paragraphs": "^2.0",
@@ -968,6 +1017,7 @@
                 "composer/installers": "^2.0",
                 "drupal/core-dev": "^10.2"
             },
+            "default-branch": true,
             "type": "drupal-profile",
             "extra": {
                 "installer-name": "nuxtify",
@@ -1018,7 +1068,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-03-24T13:36:20+00:00"
+            "time": "2024-03-30T13:01:45+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2110,22 +2160,22 @@
         },
         {
             "name": "drupal/graphql_compose",
-            "version": "2.0.0",
+            "version": "2.1.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose.git",
-                "reference": "2.0.0"
+                "reference": "2.1.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "ce7dd62349bad0686542f2aa480efe658b67f710"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta1.zip",
+                "reference": "2.1.0-beta1",
+                "shasum": "d6740dbf791562f4f86d29fc1fcaabf20294cf05"
             },
             "require": {
                 "doctrine/inflector": "^2",
                 "drupal/core": "^9.5 || ^10",
-                "drupal/graphql": "^4.5",
+                "drupal/graphql": "^4.6",
                 "php": "^8.1",
                 "symfony/string": "^6"
             },
@@ -2142,11 +2192,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1699307444",
+                    "version": "2.1.0-beta1",
+                    "datestamp": "1707026702",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2173,6 +2223,104 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/graphql_compose",
                 "issues": "https://www.drupal.org/project/issues/graphql_compose"
+            }
+        },
+        {
+            "name": "drupal/graphql_compose_preview",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/graphql_compose_preview.git",
+                "reference": "1.0.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0-beta3.zip",
+                "reference": "1.0.0-beta3",
+                "shasum": "3b4c848ce20efe05fb93ed7e72cd586a12402d81"
+            },
+            "require": {
+                "drupal/core": "^10",
+                "drupal/graphql_compose": "^2.1",
+                "drupal/graphql_compose_routes": "*",
+                "drupal/token": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "drupal/token": "^1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta3",
+                    "datestamp": "1711579566",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "almunnings",
+                    "homepage": "https://www.drupal.org/user/2251362"
+                },
+                {
+                    "name": "CedricL",
+                    "homepage": "https://www.drupal.org/user/3715087"
+                }
+            ],
+            "description": "Extended preview capabilities for GraphQL Compose.",
+            "homepage": "http://drupal.org/project/graphql_compose_preview",
+            "support": {
+                "source": "http://cgit.drupalcode.org/graphql_compose_preview",
+                "issues": "https://www.drupal.org/project/issues/graphql_compose_preview"
+            }
+        },
+        {
+            "name": "drupal/graphql_compose_routes",
+            "version": "2.0.0",
+            "require": {
+                "drupal/core": "^9.5 || ^10",
+                "drupal/graphql_compose": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1699307444",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "almunnings",
+                    "homepage": "https://www.drupal.org/user/2251362"
+                },
+                {
+                    "name": "jmolivas",
+                    "homepage": "https://www.drupal.org/user/678770"
+                },
+                {
+                    "name": "juanramonperez",
+                    "homepage": "https://www.drupal.org/user/549414"
+                }
+            ],
+            "description": "Enable to load content by URL.",
+            "homepage": "https://www.drupal.org/project/graphql_compose",
+            "support": {
+                "source": "https://git.drupalcode.org/project/graphql_compose"
             }
         },
         {
@@ -7771,7 +7919,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "dobefu/nuxtify_profile": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

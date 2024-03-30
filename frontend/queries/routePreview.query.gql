@@ -1,0 +1,7 @@
+#import "~/queries/fragments/nodes/nodeBasicPage.fragment.gql"
+
+query routePreview($id: ID!, $token: String!) {
+  preview(id: $id, token: $token) {
+    ...nodeBasicPage
+  }
+}
