@@ -1,6 +1,6 @@
 import process from 'node:process'
 
-export default eventHandler(async (event) => {
+export default eventHandler(async (event): Promise<User | undefined> => {
   const body = await readBody(event)
 
   const token = body.token
@@ -24,6 +24,5 @@ export default eventHandler(async (event) => {
     }
   }
   catch (error) {
-    return new Response('Unauthorized', { status: 401 })
   }
 })
