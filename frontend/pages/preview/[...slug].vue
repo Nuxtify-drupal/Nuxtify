@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NodeUnion, RouteInternal } from '#build/graphql-operations'
+import type { NodeUnion } from '#build/graphql-operations'
 import type { LayoutSection } from '~/types/layout-section'
 
 definePageMeta({
