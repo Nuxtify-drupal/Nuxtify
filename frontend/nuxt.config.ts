@@ -41,6 +41,17 @@ export default defineNuxtConfig({
       robots: false,
       sitemap: false,
     },
+    '/preview/**': {
+      robots: false,
+      sitemap: false,
+      security: {
+        headers: {
+          contentSecurityPolicy: {
+            'frame-ancestors': `'self' ${process.env.NUXT_PUBLIC_BACKEND_URL}`,
+          },
+        },
+      },
+    },
   },
 
   nitro: {
