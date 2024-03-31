@@ -70,6 +70,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/seo',
     'nuxt-security',
+    '@nuxt/image',
   ],
 
   tailwindcss: {
