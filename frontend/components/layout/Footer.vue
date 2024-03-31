@@ -20,6 +20,7 @@ watch(
       </span>
 
       <BaseSelect
+        id="locale"
         v-model="locale"
         :label="t('language')"
       >

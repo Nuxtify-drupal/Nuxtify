@@ -1,5 +1,9 @@
 <script setup lang="ts">
 defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
   label: {
     type: String,
     required: true,
@@ -21,6 +25,7 @@ onMounted(() => {
 <template>
   <div class="relative">
     <select
+      :id="id"
       v-model="model"
       :aria-label="label"
       :class="{
