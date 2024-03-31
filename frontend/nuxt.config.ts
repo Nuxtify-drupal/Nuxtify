@@ -21,6 +21,12 @@ export default defineNuxtConfig({
       siteName: process.env.NUXT_PUBLIC_SITE_NAME,
       baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
       backendUrl: process.env.NUXT_PUBLIC_BACKEND_URL,
+      manifest: {
+        name: process.env.NUXT_PUBLIC_MANIFEST_NAME,
+        shortName: process.env.NUXT_PUBLIC_MANIFEST_SHORT_NAME,
+        backgroundColor: process.env.NUXT_PUBLIC_MANIFEST_BACKGROUND_COLOR,
+        themeColor: process.env.NUXT_PUBLIC_MANIFEST_THEME_COLOR,
+      },
     },
   },
 

@@ -16,6 +16,16 @@ useHead({
   },
   meta: [
     ...(i18nHead.value.meta || []),
+    {
+      name: 'theme-color',
+      content: config.public.manifest.themeColor ?? '#ffffff',
+    },
+  ],
+  link: [
+    {
+      rel: 'manifest',
+      href: '/manifest.json',
+    },
   ],
   title: '',
   titleTemplate: `%s | ${config.public.siteName}`,
