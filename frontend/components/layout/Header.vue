@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 const localePath = useLocalePath()
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const localePath = useLocalePath()
         <NuxtImg
           class="w-8 h-8 sm:w-12 sm:h-12"
           src="/logo.svg"
-          :alt="config.public.siteName"
+          :alt="t('site_logo', { name: config.public.siteName })"
         />
         {{ config.public.siteName }}
       </NuxtLink>

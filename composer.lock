@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d921c73fb65b24eb1cdb980a0ac4858",
+    "content-hash": "411b6fd986f9579cf3b200696fc40900",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -568,16 +568,16 @@
         },
         {
             "name": "consolidation/output-formatters",
-            "version": "4.3.2",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/output-formatters.git",
-                "reference": "06711568b4cd169700ff7e8075db0a9a341ceb58"
+                "reference": "6812952176c5acc8ed44bdfa78fe93b745c18f25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/06711568b4cd169700ff7e8075db0a9a341ceb58",
-                "reference": "06711568b4cd169700ff7e8075db0a9a341ceb58",
+                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/6812952176c5acc8ed44bdfa78fe93b745c18f25",
+                "reference": "6812952176c5acc8ed44bdfa78fe93b745c18f25",
                 "shasum": ""
             },
             "require": {
@@ -616,9 +616,9 @@
             "description": "Format text by applying transformations provided by plug-in formatters.",
             "support": {
                 "issues": "https://github.com/consolidation/output-formatters/issues",
-                "source": "https://github.com/consolidation/output-formatters/tree/4.3.2"
+                "source": "https://github.com/consolidation/output-formatters/tree/4.4.0"
             },
-            "time": "2023-07-06T04:45:41+00:00"
+            "time": "2024-03-30T13:38:29+00:00"
         },
         {
             "name": "consolidation/robo",
@@ -993,7 +993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "d1066c79f19ce078c4e8141b1f5d22d0fcfc833a"
+                "reference": "b1a17f47755d3398f01f20208456f52ad2a25821"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -1068,7 +1068,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-03-30T13:01:45+00:00"
+            "time": "2024-03-31T12:02:26+00:00"
         },
         {
             "name": "doctrine/annotations",
