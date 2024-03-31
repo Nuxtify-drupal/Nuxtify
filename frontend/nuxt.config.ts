@@ -43,6 +43,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/': {
+      swr: 300,
+    },
     '/api/**': {
       robots: false,
       sitemap: false,
