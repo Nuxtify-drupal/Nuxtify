@@ -49,6 +49,7 @@ export default defineNuxtConfig({
     '/api/**': {
       robots: false,
       sitemap: false,
+      cors: true,
     },
     '/preview/**': {
       robots: false,
