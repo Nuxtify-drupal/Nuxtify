@@ -43,9 +43,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': {
-      swr: 300,
-    },
     '/api/**': {
       robots: false,
       sitemap: false,
@@ -148,7 +145,6 @@ export default defineNuxtConfig({
       '/api/sitemap',
     ],
     exclude: [
-      '/api/**',
       '/user',
       '/user/logout',
       '/user/register/confirm',

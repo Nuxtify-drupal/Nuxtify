@@ -5,7 +5,7 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-  <div class="font-semibold">
+  <div>
     <ClientOnly>
       <template #fallback>
         <div class="relative w-16 max-w-full">

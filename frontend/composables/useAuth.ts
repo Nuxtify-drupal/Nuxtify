@@ -11,7 +11,7 @@ export default async function useAuth() {
       return
 
     try {
-      const userData: User | undefined = await $fetch('/api/auth/session', {
+      const userData = await $fetch<User | undefined>('/api/auth/session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

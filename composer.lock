@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a17a1737f37e79f813a9c0099b779dfe",
+    "content-hash": "411b6fd986f9579cf3b200696fc40900",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -809,16 +809,16 @@
         },
         {
             "name": "consolidation/site-process",
-            "version": "5.2.0",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/site-process.git",
-                "reference": "6c44638d7af8a8b4abe12c3180701243f480539d"
+                "reference": "5e8eff50fd0015e7ca0b6ce4082cacef012f2f77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/site-process/zipball/6c44638d7af8a8b4abe12c3180701243f480539d",
-                "reference": "6c44638d7af8a8b4abe12c3180701243f480539d",
+                "url": "https://api.github.com/repos/consolidation/site-process/zipball/5e8eff50fd0015e7ca0b6ce4082cacef012f2f77",
+                "reference": "5e8eff50fd0015e7ca0b6ce4082cacef012f2f77",
                 "shasum": ""
             },
             "require": {
@@ -860,9 +860,9 @@
             "description": "A thin wrapper around the Symfony Process Component that allows applications to use the Site Alias library to specify the target for a remote call.",
             "support": {
                 "issues": "https://github.com/consolidation/site-process/issues",
-                "source": "https://github.com/consolidation/site-process/tree/5.2.0"
+                "source": "https://github.com/consolidation/site-process/tree/5.3.0"
             },
-            "time": "2022-12-06T17:57:16+00:00"
+            "time": "2024-04-01T12:42:12+00:00"
         },
         {
             "name": "cweagans/composer-patches",
@@ -989,11 +989,11 @@
         },
         {
             "name": "dobefu/nuxtify_profile",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "b9889e6a3b2e9d4c9cb092abaf7d19eda56adb17"
+                "reference": "17e716e55c81dba9072abf43a3800a0934e5cd47"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -1006,6 +1006,7 @@
                 "drupal/jwt": "^2.0",
                 "drupal/key_auth": "^2.1",
                 "drupal/layout_paragraphs": "^2.0",
+                "drupal/menu_item_extras": "^3.0",
                 "drupal/metatag": "^2.0",
                 "drupal/pathauto": "^1.12",
                 "drupal/r4032login": "^2.2",
@@ -1018,6 +1019,7 @@
                 "composer/installers": "^2.0",
                 "drupal/core-dev": "^10.2"
             },
+            "default-branch": true,
             "type": "drupal-profile",
             "extra": {
                 "installer-name": "nuxtify",
@@ -1068,7 +1070,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-04-01T11:39:52+00:00"
+            "time": "2024-04-02T04:32:42+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2626,6 +2628,76 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/layout_paragraphs",
                 "issues": "https://www.drupal.org/project/issues/layout_paragraphs"
+            }
+        },
+        {
+            "name": "drupal/menu_item_extras",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/menu_item_extras.git",
+                "reference": "3.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_item_extras-3.0.2.zip",
+                "reference": "3.0.2",
+                "shasum": "e9a86d3e703f480f93992237c5cc6e5a88671106"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.2",
+                    "datestamp": "1685006505",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Andriy Khomych",
+                    "homepage": "https://www.drupal.org/u/andriy-khomych",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Bogdan Hepting",
+                    "homepage": "https://www.drupal.org/u/bogdan-hepting",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Oleh Vehera",
+                    "homepage": "https://www.drupal.org/u/voleger",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Mykhailo Gurei",
+                    "homepage": "https://www.drupal.org/u/ozin",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provide an additional custom fields which can be used on Menu link",
+            "homepage": "https://www.drupal.org/project/menu_item_extras",
+            "keywords": [
+                "Drupal",
+                "Mega Menu"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/menu_item_extras",
+                "issues": "https://www.drupal.org/project/issues/menu_item_extras"
             }
         },
         {
@@ -7978,7 +8050,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "dobefu/nuxtify_profile": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

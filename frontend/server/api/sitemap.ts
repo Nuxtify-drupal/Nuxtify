@@ -13,7 +13,7 @@ export default defineEventHandler(async (_event) => {
     let cursor = '0'
 
     do {
-      const { data }: { data: SitemapQuery } = await $fetch('/api/graphql/query/sitemap', {
+      const { data } = await $fetch<{ data: SitemapQuery }>('/api/graphql/query/sitemap', {
         query: {
           __variables: JSON.stringify({
             first: itemsPerPage,
