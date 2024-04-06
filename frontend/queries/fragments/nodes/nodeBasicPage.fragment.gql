@@ -9,6 +9,7 @@
 
 fragment nodeBasicPage on NodeBasicPage {
   title
+  showTitle
   metatag {
     ...metaTagLink
     ...metaTagValue

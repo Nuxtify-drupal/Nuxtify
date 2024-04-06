@@ -15,9 +15,10 @@ const localePath = useLocalePath()
           />
         </div>
       </template>
+
       <div
         v-if="user"
-        class="flex gap-3 sm:gap-6"
+        class="flex justify-between gap-6"
       >
         <NuxtLink
           class="flex items-center gap-1"
@@ -38,7 +39,7 @@ const localePath = useLocalePath()
 
       <div
         v-if="!user"
-        class="flex gap-3 sm:gap-6"
+        class="flex justify-between gap-6"
       >
         <NuxtLink
           class="flex items-center gap-1"

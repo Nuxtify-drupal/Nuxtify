@@ -4,6 +4,14 @@ query menu($name: MenuAvailable!, $langcode: String!) {
       id
       title
       url
+      extras {
+        ... on MenuLinkContentMain {
+          icon
+        }
+        ... on MenuLinkContentFooter {
+          icon
+        }
+      }
     }
   }
 }

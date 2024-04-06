@@ -38,7 +38,8 @@ export default defineNuxtConfig({
       leaveFromClass: 'opacity-100',
       leaveToClass: 'opacity-0',
       enterActiveClass: 'transition-opacity',
-      leaveActiveClass: 'transition-opacity absolute inset-0',
+      leaveActiveClass: 'transition-opacity',
+      mode: 'out-in',
     },
   },
 

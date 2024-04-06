@@ -39,8 +39,8 @@ const unwatchData = watch(data, () => {
   setPageData()
 })
 
-onBeforeRouteLeave((to, from) => {
-  if (to.name !== from.name)
+onBeforeRouteUpdate((to, from) => {
+  if (to.fullPath !== from.fullPath)
     unwatchData()
 })
 
@@ -77,7 +77,7 @@ useHead({
 
 <template>
   <div class="flex flex-col max-w-6xl gap-8 m-auto">
-    <BasePageTitle>
+    <BasePageTitle v-if="page?.showTitle">
       {{ page?.title }}
     </BasePageTitle>
 
