@@ -4,6 +4,8 @@ import type { MenuAvailable } from '#build/graphql-operations'
 const { locale } = useI18n()
 const localePath = useLocalePath()
 
+const route = useRoute()
+
 const { data: menu, refresh } = await useAsyncData(
   'menu',
   async () => await useGraphqlQuery(
@@ -29,6 +31,13 @@ const hasBackdropOpened = ref(false)
 
 const mobileMenuRef = ref<HTMLElement | null>(null)
 onClickOutside(mobileMenuRef, () => hasBackdropOpened.value = false)
+
+watch (
+  () => route.fullPath,
+  () => {
+    hasBackdropOpened.value = false
+  },
+)
 </script>
 
 <template>
