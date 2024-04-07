@@ -8,6 +8,13 @@ defineProps({
     type: String,
     required: true,
   },
+  options: {
+    type: Array as PropType<{
+      value: string
+      label: string
+    }[]>,
+    required: true,
+  },
 })
 
 defineEmits([
@@ -15,11 +22,6 @@ defineEmits([
 ])
 
 const model = defineModel()
-const isLoaded = ref(false)
-
-onMounted(() => {
-  isLoaded.value = true
-})
 </script>
 
 <template>
@@ -28,18 +30,15 @@ onMounted(() => {
       :id="id"
       v-model="model"
       :aria-label="label"
-      :class="{
-        'opacity-0': !isLoaded,
-        'pointer-events-none': !isLoaded,
-      }"
     >
-      <slot />
+      <option
+        v-for="option in options"
+        :key="option.value"
+        :value="option.value"
+        :selected="model === option.value"
+      >
+        {{ option.label }}
+      </option>
     </select>
-
-    <SkeletonPlaceholderSingle
-      v-if="!isLoaded"
-      class="absolute inset-0"
-      max-height="1rem"
-    />
   </div>
 </template>

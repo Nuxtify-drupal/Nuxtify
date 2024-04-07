@@ -44,6 +44,40 @@ onBeforeRouteUpdate((to, from) => {
     unwatchData()
 })
 
+onBeforeRouteLeave(() => {
+  unwatchData()
+})
+
+const i18nRoutes = computed(() => {
+  const routes: { [key: string]: { slug: string } } = {}
+
+  for (const translation of Object.values(page.value?.translations ?? {})) {
+    if (!translation.langcode.id || !translation.url)
+      continue
+
+    const slug = translation.url
+      .split('/')
+      .filter(Boolean)
+      .filter(part => part !== translation.langcode.id)
+      .join('/')
+
+    routes[translation.langcode.id] = { slug }
+  }
+
+  // Remove the slug for the home page
+  if (`/${routes.en.slug}` === data.value?.data.info.home) {
+    for (const [langcode] of Object.entries(routes))
+      routes[langcode].slug = ''
+  }
+
+  return routes
+})
+
+const setI18nParams = useSetI18nParams()
+setI18nParams({
+  ...i18nRoutes.value,
+})
+
 const { meta, link } = (page.value?.metatag ?? []).reduce(
   (acc, tag) => {
     const tagType = tag.tag as keyof typeof acc

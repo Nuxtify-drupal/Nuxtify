@@ -10,11 +10,16 @@ watch(
     return navigateTo(switchLocalePath(locale.value))
   },
 )
+
+const options = computed(() => ([
+  { value: 'en', label: t('english') },
+  { value: 'nl', label: t('dutch') },
+]))
 </script>
 
 <template>
   <footer>
-    <div class="flex justify-between max-w-6xl py-4 sm:py-8 m-auto text-gray-600 border-t">
+    <div class="flex justify-between max-w-6xl py-8 m-auto text-gray-600 border-t">
       <span class="text-sm">
         {{ config.public.siteName }} &copy; {{ new Date().getFullYear() }}
       </span>
@@ -23,16 +28,8 @@ watch(
         id="locale"
         v-model="locale"
         :label="t('language')"
-      >
-        <option
-          value="en"
-        >
-          {{ t('english') }}
-        </option>
-        <option value="nl">
-          {{ t('dutch') }}
-        </option>
-      </BaseSelect>
+        :options="options"
+      />
     </div>
   </footer>
 </template>

@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { breakpointsTailwind } from '@vueuse/core'
 import type { MenuAvailable } from '#build/graphql-operations'
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
 
-const { data: menu } = await useAsyncData(
+const { data: menu, refresh } = await useAsyncData(
   'menu',
   async () => await useGraphqlQuery(
     'menu',
@@ -14,6 +13,13 @@ const { data: menu } = await useAsyncData(
       langcode: locale.value,
     },
   ),
+)
+
+watch(
+  () => locale.value,
+  async () => {
+    await refresh()
+  },
 )
 
 const menuItemsDesktop = computed(() => menu.value?.data?.menu?.items.slice(0, 3))
@@ -29,14 +35,27 @@ onClickOutside(mobileMenuRef, () => hasBackdropOpened.value = false)
   <div class="flex-1">
     <div class="flex gap-6 max-md:hidden">
       <nav class="flex flex-1 gap-6">
-        <NuxtLink
-          v-for="item in menuItemsDesktop" :key="item.id"
-          class="flex items-center gap-1" :to="localePath(item?.url || '')"
-        >
-          <Icon v-if="item.extras?.icon" :name="item.extras.icon" />
+        <ClientOnly>
+          <template #fallback>
+            <div
+              class="relative w-20 max-w-full"
+            >
+          &nbsp;
+              <SkeletonPlaceholderSingle
+                class="absolute inset-0"
+                height="1rem"
+              />
+            </div>
+          </template>
+          <NuxtLink
+            v-for="item in menuItemsDesktop" :key="item.id"
+            class="flex items-center gap-1" :to="localePath(item?.url || '')"
+          >
+            <Icon v-if="item.extras?.icon" :name="item.extras.icon" />
 
-          {{ item.title }}
-        </NuxtLink>
+            {{ item.title }}
+          </NuxtLink>
+        </ClientOnly>
       </nav>
 
       <BaseAuthBtns />
@@ -84,19 +103,21 @@ onClickOutside(mobileMenuRef, () => hasBackdropOpened.value = false)
               </div>
 
               <div class="flex-1">
-                <NuxtLink
-                  v-for="item in menu?.data?.menu?.items" :key="item.id"
-                  class="flex items-center gap-1 py-4"
-                  :to="localePath(item?.url || '')"
-                >
-                  <Icon
-                    v-if="item.extras?.icon"
-                    class="w-6 h-6"
-                    :name="item.extras.icon"
-                  />
+                <ClientOnly>
+                  <NuxtLink
+                    v-for="item in menu?.data?.menu?.items" :key="item.id"
+                    class="flex items-center gap-1 py-4"
+                    :to="localePath(item?.url || '')"
+                  >
+                    <Icon
+                      v-if="item.extras?.icon"
+                      class="w-6 h-6"
+                      :name="item.extras.icon"
+                    />
 
-                  {{ item.title }}
-                </NuxtLink>
+                    {{ item.title }}
+                  </NuxtLink>
+                </ClientOnly>
               </div>
 
               <BaseAuthBtns />

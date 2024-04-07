@@ -1,6 +1,9 @@
 #import "~/queries/fragments/nodes/nodeBasicPage.fragment.gql"
 
 query route($path: String!, $langcode: String!) {
+  info {
+    home
+  }
   route(path: $path, langcode: $langcode) {
     ... on RouteInternal {
       entity {

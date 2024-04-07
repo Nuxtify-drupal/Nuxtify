@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "411b6fd986f9579cf3b200696fc40900",
+    "content-hash": "2d921c73fb65b24eb1cdb980a0ac4858",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -993,7 +993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "ffc5a50920f5ca4d3e1d25f1ac7e4cf1678940bc"
+                "reference": "9242d3ff1cf8b1c0392d556a376915af2b1d843e"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -1071,7 +1071,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-04-06T18:00:53+00:00"
+            "time": "2024-04-07T10:01:30+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2226,7 +2226,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose.git",
-                "reference": "a2072f19c3121f87b5c35a854546248ae261b91a"
+                "reference": "bf8e261ed4ca7f5309d5d78b053706d6b1ec5eee"
             },
             "require": {
                 "doctrine/inflector": "^2",
@@ -2262,8 +2262,8 @@
                     "dev-2.1.x": "2.1.x-dev"
                 },
                 "drupal": {
-                    "version": "2.1.0-beta1+22-dev",
-                    "datestamp": "1712407593",
+                    "version": "2.1.0-beta1+23-dev",
+                    "datestamp": "1712460050",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2297,20 +2297,20 @@
         },
         {
             "name": "drupal/graphql_compose_preview",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose_preview.git",
-                "reference": "1.0.0-beta3"
+                "reference": "1.0.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0-beta3.zip",
-                "reference": "1.0.0-beta3",
-                "shasum": "3b4c848ce20efe05fb93ed7e72cd586a12402d81"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0-beta4.zip",
+                "reference": "1.0.0-beta4",
+                "shasum": "9f9e91e35451a720ae1b477671c1e0642d55c77e"
             },
             "require": {
-                "drupal/core": "^10",
+                "drupal/core": "^10.1 || ^11",
                 "drupal/graphql_compose": "^2.1",
                 "drupal/graphql_compose_routes": "*",
                 "drupal/token": "*",
@@ -2322,8 +2322,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta3",
-                    "datestamp": "1711579566",
+                    "version": "1.0.0-beta4",
+                    "datestamp": "1712459722",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"

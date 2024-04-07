@@ -62,6 +62,10 @@ onBeforeRouteUpdate((to, from) => {
   if (to.fullPath !== from.fullPath)
     unwatchData()
 })
+
+onBeforeRouteLeave(() => {
+  unwatchData()
+})
 </script>
 
 <template>

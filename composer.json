@@ -80,11 +80,6 @@
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
-        },
-        "patches": {
-            "drupal/graphql_compose_preview": {
-                "3437140 - Unable to install module in installation profile": "https://git.drupalcode.org/project/graphql_compose_preview/-/merge_requests/3.diff"
-            }
         }
     }
 }

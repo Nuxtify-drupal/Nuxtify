@@ -30,17 +30,12 @@ export default defineNuxtConfig({
     },
   },
 
+  css: [
+    'vue3-toastify/dist/index.css',
+  ],
+
   app: {
     rootId: 'app',
-    pageTransition: {
-      enterFromClass: 'opacity-0',
-      enterToClass: 'opacity-100',
-      leaveFromClass: 'opacity-100',
-      leaveToClass: 'opacity-0',
-      enterActiveClass: 'transition-opacity',
-      leaveActiveClass: 'transition-opacity',
-      mode: 'out-in',
-    },
   },
 
   routeRules: {
@@ -113,6 +108,8 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    skipSettingLocaleOnNavigate: true,
     bundle: {
       dropMessageCompiler: true,
       fullInstall: false,
@@ -154,14 +151,21 @@ export default defineNuxtConfig({
       { label: 'URL', width: '67%' },
       { label: 'Last Modified', select: 'sitemap:lastmod', width: '33%' },
     ],
+    xslTips: false,
   },
 
   security: {
     headers: {
       crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+
+      // Do not upgrade insecure requests in development.
+      // Fixes an issue in Safari where the browser would block requests.
       contentSecurityPolicy: {
         'upgrade-insecure-requests': (process.env.NODE_ENV !== 'development'),
       },
     },
+
+    rateLimiter: false,
+    removeLoggers: false,
   },
 })

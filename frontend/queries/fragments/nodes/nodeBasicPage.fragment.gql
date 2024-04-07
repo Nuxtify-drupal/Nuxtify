@@ -21,4 +21,10 @@ fragment nodeBasicPage on NodeBasicPage {
     ...paragraphSubtitle
     ...paragraphTextarea
   }
+  translations {
+    url
+    langcode {
+      id
+    }
+  }
 }
