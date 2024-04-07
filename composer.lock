@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d921c73fb65b24eb1cdb980a0ac4858",
+    "content-hash": "147318b167a6ae67a808058292c505bd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -989,11 +989,11 @@
         },
         {
             "name": "dobefu/nuxtify_profile",
-            "version": "1.0.x-dev",
+            "version": "1.0.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "9242d3ff1cf8b1c0392d556a376915af2b1d843e"
+                "reference": "8f4e5e48f9651f2c6237316ffe5f436ce7be18db"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -1020,7 +1020,6 @@
                 "composer/installers": "^2.0",
                 "drupal/core-dev": "^10.2"
             },
-            "default-branch": true,
             "type": "drupal-profile",
             "extra": {
                 "installer-name": "nuxtify",
@@ -1071,7 +1070,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-04-07T10:01:30+00:00"
+            "time": "2024-04-07T15:16:08+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -4012,16 +4011,16 @@
         },
         {
             "name": "iconify/json",
-            "version": "2.2.197",
+            "version": "2.2.198",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iconify/icon-sets.git",
-                "reference": "ffea5a04eea3e26c5db7b37ecc367f152387912f"
+                "reference": "e0d50e46c167378db7681ee72c3280a8070239b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/ffea5a04eea3e26c5db7b37ecc367f152387912f",
-                "reference": "ffea5a04eea3e26c5db7b37ecc367f152387912f",
+                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/e0d50e46c167378db7681ee72c3280a8070239b3",
+                "reference": "e0d50e46c167378db7681ee72c3280a8070239b3",
                 "shasum": ""
             },
             "type": "library",
@@ -4038,9 +4037,9 @@
             "homepage": "https://iconify.design/icon-sets/",
             "support": {
                 "issues": "https://github.com/iconify/icon-sets/issues",
-                "source": "https://github.com/iconify/icon-sets/tree/2.2.197"
+                "source": "https://github.com/iconify/icon-sets/tree/2.2.198"
             },
-            "time": "2024-04-04T14:59:53+00:00"
+            "time": "2024-04-07T15:25:45+00:00"
         },
         {
             "name": "league/container",
@@ -8094,9 +8093,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "dobefu/nuxtify_profile": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
