@@ -28,6 +28,7 @@
     "nuxt-graphql-middleware": "^4.0.0",
     "nuxt-icon": "^0.6.10",
     "nuxt-security": "^1.2.2",
+    "nuxt-seo-experiments": "4.0.0-rc.6",
     "pnpm": "^8.15.4",
     "typescript": "^5.4.2",
     "vue-tsc": "^1",

@@ -2,17 +2,26 @@
 const { user } = await useAuth()
 const { t } = useI18n()
 const localePath = useLocalePath()
+
+const wrapperClasses = 'flex justify-between gap-6'
 </script>
 
 <template>
   <div>
     <ClientOnly>
       <template #fallback>
-        <div class="relative w-16 max-w-full">
-          <SkeletonPlaceholderSingle
-            class="absolute inset-0"
-            height="1rem"
-          />
+        <div :class="wrapperClasses">
+          <div
+            v-for="index in 2"
+            :key="index"
+            class="relative w-16 max-w-full"
+          >
+          &nbsp;
+            <SkeletonPlaceholderSingle
+              class="absolute inset-0"
+              height="1rem"
+            />
+          </div>
         </div>
       </template>
 
