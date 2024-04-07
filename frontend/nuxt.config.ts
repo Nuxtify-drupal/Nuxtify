@@ -168,4 +168,10 @@ export default defineNuxtConfig({
     rateLimiter: false,
     removeLoggers: false,
   },
+
+  image: {
+    domains: [
+      process.env.NUXT_PUBLIC_BACKEND_URL ?? '',
+    ],
+  },
 })

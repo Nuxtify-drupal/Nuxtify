@@ -6,6 +6,7 @@
 #import "~/queries/fragments/paragraphs/paragraphTitle.fragment.gql"
 #import "~/queries/fragments/paragraphs/paragraphSubtitle.fragment.gql"
 #import "~/queries/fragments/paragraphs/paragraphTextarea.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphImage.fragment.gql"
 
 fragment nodeBasicPage on NodeBasicPage {
   title
@@ -20,6 +21,7 @@ fragment nodeBasicPage on NodeBasicPage {
     ...paragraphTitle
     ...paragraphSubtitle
     ...paragraphTextarea
+    ...paragraphImage
   }
   translations {
     url

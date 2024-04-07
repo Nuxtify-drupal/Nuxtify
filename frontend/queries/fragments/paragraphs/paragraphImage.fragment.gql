@@ -1,0 +1,21 @@
+fragment paragraphImage on ParagraphImage {
+  __typename
+  image {
+    ... on MediaImage {
+      name
+      mediaImage {
+        url
+        title
+        alt
+        height
+        width
+      }
+    }
+  }
+  composition {
+    position {
+      parentId
+      region
+    }
+  }
+}
