@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { NodeUnion } from '#build/graphql-operations'
-import type { LayoutSection } from '~/types/layout-section'
 
 definePageMeta({
   layout: 'preview',
@@ -44,12 +43,9 @@ if (data.value?.data === null)
   showError({ statusCode: 404, statusMessage: 'Not Found' })
 
 const page = ref<NodeUnion | undefined>(undefined)
-let layout = reactive<LayoutSection[]>([])
 
 function setPageData() {
   page.value = data.value?.data?.preview as NodeUnion || undefined
-
-  layout = formatLayout(page.value?.layout || [])
 }
 
 setPageData()
@@ -69,31 +65,8 @@ onBeforeRouteLeave(() => {
 </script>
 
 <template>
-  <div class="flex flex-col max-w-6xl gap-8 m-auto">
-    <BasePageTitle v-if="page?.showTitle">
-      {{ page?.title }}
-    </BasePageTitle>
-
-    <div
-      v-for="sections in layout"
-      :key="sections.id"
-      class="flex flex-wrap"
-    >
-      <div
-        v-for="(section, section_name) in sections.children"
-        :key="section_name"
-        class="flex-1"
-      >
-        <div
-          v-for="(component, component_name) in section"
-          :key="component_name"
-        >
-          <component
-            :is="component.__typename"
-            v-bind="component"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+  <BasePageLayout
+    v-if="page"
+    :page="page"
+  />
 </template>

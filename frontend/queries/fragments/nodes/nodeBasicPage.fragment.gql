@@ -24,7 +24,7 @@ fragment nodeBasicPage on NodeBasicPage {
     ...paragraphImage
   }
   translations {
-    url
+    path
     langcode {
       id
     }

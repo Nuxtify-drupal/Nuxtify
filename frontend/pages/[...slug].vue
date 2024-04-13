@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { NodeUnion, RouteInternal } from '#build/graphql-operations'
-import type { LayoutSection } from '~/types/layout-section'
 
 const config = useRuntimeConfig()
 
@@ -25,12 +24,9 @@ if (data.value?.data?.route === null)
   showError({ statusCode: 404, statusMessage: 'Not Found' })
 
 const page = ref<NodeUnion | undefined>(undefined)
-let layout = reactive<LayoutSection[]>([])
 
 function setPageData() {
   page.value = (data.value?.data?.route as RouteInternal)?.entity as NodeUnion || undefined
-
-  layout = formatLayout(page.value?.layout || [])
 }
 
 setPageData()
@@ -52,10 +48,10 @@ const i18nRoutes = computed(() => {
   const routes: { [key: string]: { slug: string } } = {}
 
   for (const translation of Object.values(page.value?.translations ?? {})) {
-    if (!translation.langcode.id || !translation.url)
+    if (!translation.langcode.id || !translation.path)
       continue
 
-    const slug = translation.url
+    const slug = translation.path
       .split('/')
       .filter(Boolean)
       .filter(part => part !== translation.langcode.id)
@@ -110,31 +106,8 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col max-w-6xl gap-8 m-auto">
-    <BasePageTitle v-if="page?.showTitle">
-      {{ page?.title }}
-    </BasePageTitle>
-
-    <div
-      v-for="sections in layout"
-      :key="sections.id"
-      class="flex flex-wrap"
-    >
-      <div
-        v-for="(section, section_name) in sections.children"
-        :key="section_name"
-        class="flex-1"
-      >
-        <div
-          v-for="(component, component_name) in section"
-          :key="component_name"
-        >
-          <component
-            :is="component.__typename"
-            v-bind="component"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+  <BasePageLayout
+    v-if="page"
+    :page="page"
+  />
 </template>
