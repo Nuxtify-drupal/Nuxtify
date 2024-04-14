@@ -993,7 +993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "00a4e6247bf3ba702ebe4a1bbcd80aced60ac2d5"
+                "reference": "cd840b759ced4efa1dfe8e3ddd6eee5d58ffe267"
             },
             "require": {
                 "drupal/admin_toolbar": "^3.4",
@@ -1004,6 +1004,7 @@
                 "drupal/graphql": "^4.7",
                 "drupal/graphql_compose": "^2.1@beta",
                 "drupal/graphql_compose_preview": "^1.0@beta",
+                "drupal/inline_entity_form": "^3.0@RC",
                 "drupal/jwt": "^2.0",
                 "drupal/key_auth": "^2.1",
                 "drupal/layout_paragraphs": "^2.0",
@@ -1072,7 +1073,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-04-13T12:46:49+00:00"
+            "time": "2024-04-14T11:58:44+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2292,17 +2293,17 @@
         },
         {
             "name": "drupal/graphql_compose",
-            "version": "2.1.0-beta3",
+            "version": "2.1.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose.git",
-                "reference": "2.1.0-beta3"
+                "reference": "2.1.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta3.zip",
-                "reference": "2.1.0-beta3",
-                "shasum": "02f5e11d0b8ed6228055968ade8dcf722d5ddf68"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta4.zip",
+                "reference": "2.1.0-beta4",
+                "shasum": "374cc0e633f7b6dc8521450f6255408ba59781f6"
             },
             "require": {
                 "doctrine/inflector": "^2",
@@ -2336,8 +2337,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0-beta3",
-                    "datestamp": "1712960127",
+                    "version": "2.1.0-beta4",
+                    "datestamp": "1713051419",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -2457,6 +2458,98 @@
             "homepage": "https://www.drupal.org/project/graphql_compose",
             "support": {
                 "source": "https://git.drupalcode.org/project/graphql_compose"
+            }
+        },
+        {
+            "name": "drupal/inline_entity_form",
+            "version": "3.0.0-rc19",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/inline_entity_form.git",
+                "reference": "3.0.0-rc19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-3.0.0-rc19.zip",
+                "reference": "3.0.0-rc19",
+                "shasum": "d8976940dd3f85412ba5e274af15fbcdd22ee27a"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "drupal/entity_reference_revisions": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.0-rc19",
+                    "datestamp": "1704729077",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bojanz",
+                    "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "Centarro",
+                    "homepage": "https://www.drupal.org/user/3661446"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "jsacksick",
+                    "homepage": "https://www.drupal.org/user/972218"
+                },
+                {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "ram4nd",
+                    "homepage": "https://www.drupal.org/user/601534"
+                },
+                {
+                    "name": "rszrama",
+                    "homepage": "https://www.drupal.org/user/49344"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "Provides a widget for inline management (creation, modification, removal) of referenced entities.",
+            "homepage": "https://www.drupal.org/project/inline_entity_form",
+            "support": {
+                "source": "https://git.drupalcode.org/project/inline_entity_form"
             }
         },
         {

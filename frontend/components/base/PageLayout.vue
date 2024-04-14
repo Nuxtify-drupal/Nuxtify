@@ -35,8 +35,7 @@ const layout = computed<LayoutSection[]>(() => {
       if (!section.children[child.composition.position.region])
         section.children[child.composition.position.region] = []
 
-      const component = { ...child } as any
-      delete component.composition
+      const component = { ...child }
 
       section.children[child.composition.position.region].push(component)
     }
@@ -84,7 +83,14 @@ const layout = computed<LayoutSection[]>(() => {
         >
           <component
             :is="component.__typename"
+            v-if="component.__typename !== 'ParagraphFromLibrary'"
             v-bind="component"
+          />
+
+          <component
+            :is="component.reusableParagraph.paragraphs.__typename"
+            v-else-if="component.__typename === 'ParagraphFromLibrary'"
+            v-bind="component.reusableParagraph.paragraphs"
           />
         </div>
       </div>

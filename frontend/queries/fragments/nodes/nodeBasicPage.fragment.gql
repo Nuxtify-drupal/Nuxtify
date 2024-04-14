@@ -2,11 +2,8 @@
 #import "~/queries/fragments/metatags/metaTagValue.fragment.gql"
 #import "~/queries/fragments/metatags/metaTagProperty.fragment.gql"
 
-#import "~/queries/fragments/paragraphs/paragraphLayout.fragment.gql"
-#import "~/queries/fragments/paragraphs/paragraphTitle.fragment.gql"
-#import "~/queries/fragments/paragraphs/paragraphSubtitle.fragment.gql"
-#import "~/queries/fragments/paragraphs/paragraphTextarea.fragment.gql"
-#import "~/queries/fragments/paragraphs/paragraphImage.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphFromLibrary.fragment.gql"
 
 fragment nodeBasicPage on NodeBasicPage {
   title
@@ -17,11 +14,8 @@ fragment nodeBasicPage on NodeBasicPage {
     ...metaTagProperty
   }
   layout {
-    ...paragraphLayout
-    ...paragraphTitle
-    ...paragraphSubtitle
-    ...paragraphTextarea
-    ...paragraphImage
+    ...ParagraphUnion
+    ...paragraphFromLibrary
   }
   translations {
     path

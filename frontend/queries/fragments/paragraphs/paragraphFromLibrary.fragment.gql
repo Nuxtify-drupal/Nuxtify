@@ -1,0 +1,16 @@
+#import "~/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
+
+fragment paragraphFromLibrary on ParagraphFromLibrary {
+  __typename
+  reusableParagraph {
+    paragraphs {
+      ...ParagraphUnion
+    }
+  }
+  composition {
+    position {
+      parentId
+      region
+    }
+  }
+}

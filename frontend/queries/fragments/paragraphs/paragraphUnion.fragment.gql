@@ -1,0 +1,13 @@
+#import "~/queries/fragments/paragraphs/paragraphLayout.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphTitle.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphSubtitle.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphTextarea.fragment.gql"
+#import "~/queries/fragments/paragraphs/paragraphImage.fragment.gql"
+
+fragment ParagraphUnion on ParagraphUnion {
+  ...paragraphLayout
+  ...paragraphTitle
+  ...paragraphSubtitle
+  ...paragraphTextarea
+  ...paragraphImage
+}
