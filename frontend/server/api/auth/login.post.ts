@@ -10,24 +10,35 @@ export default eventHandler(async (event: H3Event) => {
     return new Response('Unauthorized', { status: 401 })
 
   try {
-    const response = await $fetch.raw(`${process.env.NUXT_PUBLIC_BACKEND_URL}/user/login?_format=json`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': token as string,
+    const response = await fetch(
+      `${process.env.NUXT_PUBLIC_BACKEND_URL}/user/login?${new URLSearchParams({
+        _format: 'json',
+        language: body.langcode,
+      })}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': token as string,
+        },
+        body: JSON.stringify({
+          name: body.email,
+          pass: body.password,
+          preferred_langcode: [{ value: body.langcode }],
+        }),
       },
-      body: JSON.stringify({
-        name: body.email,
-        pass: body.password,
-      }),
-    })
+    )
 
     if (!response || response.status !== 200) {
-      return {
-        error: {
-          statusCode: response.status,
-        },
+      const json = await response.json()
+
+      if (json.message) {
+        return new Response(JSON.stringify({
+          message: json.message,
+        }), { status: 422 })
       }
+
+      return new Response('Unauthorized', { status: 401 })
     }
 
     const userData: {
@@ -38,7 +49,7 @@ export default eventHandler(async (event: H3Event) => {
       csrf_token: string
       logout_token: string
       access_token: string
-    } = response._data as any
+    } = await response.json() as any
 
     setCookie(event, 'auth.token', userData.access_token)
     setCookie(event, 'auth.uid', userData.current_user.uid)
@@ -48,6 +59,7 @@ export default eventHandler(async (event: H3Event) => {
     }
   }
   catch (error) {
+    console.error(error)
     return new Response('Unauthorized', { status: 401 })
   }
 })

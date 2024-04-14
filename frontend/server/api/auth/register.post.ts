@@ -16,22 +16,49 @@ export default eventHandler(async (event: H3Event) => {
     return new Response('Unauthorized', { status: 401 })
 
   try {
-    const response = await fetch(`${process.env.NUXT_PUBLIC_BACKEND_URL}/user/registerpass?_format=json`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': token as string,
+    const response = await fetch(
+      `${process.env.NUXT_PUBLIC_BACKEND_URL}/user/registerpass?${new URLSearchParams({
+        _format: 'json',
+        language: body.langcode,
+      })}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': token as string,
+        },
+        body: JSON.stringify({
+          name: [{ value: body.email }],
+          mail: [{ value: body.email }],
+          pass: [{ value: body.password }],
+          preferred_langcode: [{ value: body.langcode }],
+        }),
       },
-      body: JSON.stringify({
-        name: [{ value: body.email }],
-        mail: [{ value: body.email }],
-        pass: [{ value: body.password }],
-        preferred_langcode: [{ value: body.langcode }],
-      }),
-    })
+    )
 
-    if (!response || response.status !== 200)
+    if (!response || response.status !== 200) {
+      const json = await response.json()
+
+      if (json.message) {
+        let message = json.message.split('\n')
+        message.shift()
+
+        message = message.map((line: string) => {
+          const [key, value] = line.split(': ')
+
+          if (key !== 'name')
+            return value
+
+          return ''
+        })
+
+        return new Response(JSON.stringify({
+          message: message.filter(Boolean) || [],
+        }), { status: 422 })
+      }
+
       return new Response('Unauthorized', { status: 401 })
+    }
   }
   catch (error) {
     return new Response('Unauthorized', { status: 401 })

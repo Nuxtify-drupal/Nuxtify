@@ -26,18 +26,11 @@ async function login(e: SubmitEvent) {
     return navigateTo(localePath('/user'))
   }
   catch (error: any) {
-    console.error(error)
-
     if (process.client) {
-      switch (error?.message) {
-        case '403':
-          toast.error(t('login_error_credentials'))
-          break
-
-        default:
-          toast.error(t('login_error_generic'))
-          break
-      }
+      if (typeof error === 'string')
+        toast.error(error)
+      else
+        toast.error(t('login_error_generic'))
     }
   }
   finally {

@@ -40,18 +40,26 @@ export default async function useAuth() {
     }
 
     try {
-      const response = await $fetch('/api/auth/login', {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({
+          langcode: locale.value,
+          email,
+          password,
+        }),
       })
 
-      if ('error' in response) {
-        return {
-          data: null,
-          error: new Error(response.error?.statusCode?.toString() ?? '500'),
+      if (!response || Math.floor(response.status / 100) !== 2) {
+        const json = await response.json()
+
+        if (json.message) {
+          return {
+            data: null,
+            error: json.message,
+          }
         }
       }
 
@@ -90,7 +98,7 @@ export default async function useAuth() {
     }
 
     try {
-      const response = await $fetch('/api/auth/register', {
+      const response = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,6 +110,17 @@ export default async function useAuth() {
           password_confirm,
         }),
       })
+
+      if (!response || Math.floor(response.status / 100) !== 2) {
+        const json = await response.json()
+
+        if (json.message) {
+          return {
+            data: null,
+            error: json.message,
+          }
+        }
+      }
 
       return {
         data: response,

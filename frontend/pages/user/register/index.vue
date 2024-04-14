@@ -9,6 +9,8 @@ const email = ref('')
 const password = ref('')
 const password_confirm = ref('')
 
+const toast = useToast()
+
 async function register(e: SubmitEvent) {
   e.preventDefault()
   isLoading.value = true
@@ -25,8 +27,20 @@ async function register(e: SubmitEvent) {
 
     return navigateTo(localePath('/user/register/confirm'))
   }
-  catch (error) {
-    console.error(error)
+  catch (error: any) {
+    if (process.client) {
+      if (typeof error === 'string') {
+        toast.error(error)
+        return
+      }
+
+      if (typeof error === 'object') {
+        for (const key in error) {
+          if (error[key])
+            toast.error(error[key])
+        }
+      }
+    }
   }
   finally {
     isLoading.value = false
