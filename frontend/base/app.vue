@@ -1,4 +1,10 @@
 <script setup lang="ts">
+const { finalizePendingLocaleChange } = useI18n()
+
+async function onBeforeEnter() {
+  await finalizePendingLocaleChange()
+}
+
 const config = useRuntimeConfig()
 
 const i18nHead = useLocaleHead({
@@ -33,13 +39,20 @@ useHead({
 </script>
 
 <template>
-  <div class="flex flex-col justify-between flex-1 gap-8 px-4 md:px-8">
-    <LayoutHeader />
+  <NuxtLayout>
+    <NuxtLoadingIndicator />
 
-    <main class="flex-1 w-full mx-auto">
-      <slot />
-    </main>
-
-    <LayoutFooter />
-  </div>
+    <NuxtPage
+      :transition="{
+        enterFromClass: 'opacity-0',
+        enterToClass: 'opacity-100',
+        leaveFromClass: 'opacity-100',
+        leaveToClass: 'opacity-0',
+        enterActiveClass: 'transition-opacity',
+        leaveActiveClass: 'transition-opacity',
+        mode: 'out-in',
+        onBeforeEnter,
+      }"
+    />
+  </NuxtLayout>
 </template>

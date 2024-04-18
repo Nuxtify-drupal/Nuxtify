@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NodeUnion, ParagraphUnion } from '#build/graphql-operations'
-import type { LayoutSection } from '~/types/layout-section'
+import type { LayoutSection } from '~/base/types/layout-section'
 
 const props = defineProps({
   page: {

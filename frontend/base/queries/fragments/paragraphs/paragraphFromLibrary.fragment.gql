@@ -1,4 +1,4 @@
-#import "~/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
+#import "~/base/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
 
 fragment paragraphFromLibrary on ParagraphFromLibrary {
   __typename

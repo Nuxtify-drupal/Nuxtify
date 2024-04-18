@@ -1,0 +1,26 @@
+#import "~/base/queries/fragments/metatags/metaTagLink.fragment.gql"
+#import "~/base/queries/fragments/metatags/metaTagValue.fragment.gql"
+#import "~/base/queries/fragments/metatags/metaTagProperty.fragment.gql"
+
+#import "~/base/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
+#import "~/base/queries/fragments/paragraphs/paragraphFromLibrary.fragment.gql"
+
+fragment nodeBasicPage on NodeBasicPage {
+  title
+  showTitle
+  metatag {
+    ...metaTagLink
+    ...metaTagValue
+    ...metaTagProperty
+  }
+  layout {
+    ...ParagraphUnion
+    ...paragraphFromLibrary
+  }
+  translations {
+    path
+    langcode {
+      id
+    }
+  }
+}

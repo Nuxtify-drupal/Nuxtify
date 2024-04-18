@@ -44,27 +44,14 @@ watch (
   <div class="flex-1">
     <div class="flex gap-6 max-md:hidden">
       <nav class="flex flex-1 gap-6">
-        <ClientOnly>
-          <template #fallback>
-            <div
-              class="relative w-20 max-w-full"
-            >
-          &nbsp;
-              <SkeletonPlaceholderSingle
-                class="absolute inset-0"
-                height="1rem"
-              />
-            </div>
-          </template>
-          <NuxtLink
-            v-for="item in menuItemsDesktop" :key="item.id"
-            class="flex items-center gap-1" :to="localePath(item?.url || '')"
-          >
-            <Icon v-if="item.extras?.icon" :name="item.extras.icon" />
+        <NuxtLink
+          v-for="item in menuItemsDesktop" :key="item.id"
+          class="flex items-center gap-1" :to="localePath(item?.url || '')"
+        >
+          <Icon v-if="item.extras?.icon" :name="item.extras.icon" />
 
-            {{ item.title }}
-          </NuxtLink>
-        </ClientOnly>
+          {{ item.title }}
+        </NuxtLink>
       </nav>
 
       <BaseAuthBtns />
@@ -92,7 +79,8 @@ watch (
           enter-active-class="transition-transform duration-300"
           enter-from-class="-translate-x-full"
           leave-active-class="transition-transform duration-300"
-          leave-to-class="-translate-x-full" @after-leave="isMenuOpen = false"
+          leave-to-class="-translate-x-full"
+          @after-leave="isMenuOpen = false"
         >
           <div
             v-if="hasBackdropOpened"
@@ -100,7 +88,7 @@ watch (
             class="fixed top-0 bottom-0 w-full p-2 sm:w-96"
           >
             <div
-              class="flex flex-col h-full p-8 text-lg bg-white rounded-lg shadow-lg"
+              class="flex flex-col h-full p-8 text-lg bg-white border border-gray-300 rounded-lg shadow-lg dark:bg-stone-800 dark:border-stone-700"
             >
               <div class="text-right">
                 <Icon
@@ -112,21 +100,19 @@ watch (
               </div>
 
               <div class="flex-1">
-                <ClientOnly>
-                  <NuxtLink
-                    v-for="item in menu?.data?.menu?.items" :key="item.id"
-                    class="flex items-center gap-1 py-4"
-                    :to="localePath(item?.url || '')"
-                  >
-                    <Icon
-                      v-if="item.extras?.icon"
-                      class="w-6 h-6"
-                      :name="item.extras.icon"
-                    />
+                <NuxtLink
+                  v-for="item in menu?.data?.menu?.items" :key="item.id"
+                  class="flex items-center gap-1 py-4"
+                  :to="localePath(item?.url || '')"
+                >
+                  <Icon
+                    v-if="item.extras?.icon"
+                    class="w-6 h-6"
+                    :name="item.extras.icon"
+                  />
 
-                    {{ item.title }}
-                  </NuxtLink>
-                </ClientOnly>
+                  {{ item.title }}
+                </NuxtLink>
               </div>
 
               <BaseAuthBtns />

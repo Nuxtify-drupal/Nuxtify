@@ -6,7 +6,7 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 bg-white">
+  <header class="sticky top-0 z-40 px-4 md:px-8">
     <div
       class="flex items-center justify-between max-w-6xl gap-6 py-6 m-auto font-semibold border-b md:py-8"
     >

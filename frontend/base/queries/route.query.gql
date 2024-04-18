@@ -1,4 +1,4 @@
-#import "~/queries/fragments/nodes/nodeBasicPage.fragment.gql"
+#import "~/base/queries/fragments/nodes/nodeBasicPage.fragment.gql"
 
 query route($path: String!, $langcode: String!) {
   info {
