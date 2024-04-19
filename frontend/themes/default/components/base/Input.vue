@@ -47,7 +47,10 @@ onMounted(() => {
 
 <template>
   <div>
-    <BaseLabel :for="id">
+    <BaseLabel
+      :for="id"
+      class="mb-2 -mt-2"
+    >
       {{ label }}
     </BaseLabel>
 
@@ -55,7 +58,7 @@ onMounted(() => {
       :id="id"
       ref="input"
       v-model="model"
-      class="w-full px-4 py-3 border rounded-lg disabled:opacity-50 disabled:pointer-events-none"
+      class="block w-full px-4 py-3 text-sm transition-all border rounded-lg dark:bg-stone-900 dark:border-stone-700 focus:border-blue-500 disabled:opacity-50 disabled:pointer-events-none outline outline-transparent focus:outline-blue-500 focus:shadow-lg"
       :type="type"
       :name="name"
       :autocapitalize="autocapitalize || undefined"

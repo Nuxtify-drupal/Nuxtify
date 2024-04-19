@@ -29,6 +29,7 @@ const model = defineModel()
     :id="id"
     v-model="model"
     :aria-label="label"
+    class="bg-white dark:bg-stone-950"
   >
     <option
       v-for="option in options"

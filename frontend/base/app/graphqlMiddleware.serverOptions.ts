@@ -9,10 +9,12 @@ export default defineGraphqlServerOptions({
   serverFetchOptions(event: H3Event, _operation?: string, _operationName?: string) {
     const { headers } = event
     if (headers.has('Authorization')) {
-      return {
-        headers: {
-          Authorization: headers.get('Authorization') || '',
-        },
+      if (!headers.get('Authorization')?.startsWith('Basic ')) {
+        return {
+          headers: {
+            Authorization: headers.get('Authorization') || '',
+          },
+        }
       }
     }
 

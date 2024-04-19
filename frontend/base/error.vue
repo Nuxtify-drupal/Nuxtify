@@ -4,6 +4,12 @@ import type { NuxtError } from '#app'
 defineProps({
   error: Object as () => NuxtError,
 })
+
+useHead({
+  bodyAttrs: {
+    class: 'absolute inset-0 flex flex-col',
+  },
+})
 </script>
 
 <template>
