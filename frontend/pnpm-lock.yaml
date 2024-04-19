@@ -61,9 +61,6 @@ devDependencies:
   vue-tsc:
     specifier: ^1
     version: 1.8.27(typescript@5.4.5)
-  vue3-toastify:
-    specifier: ^0.2.1
-    version: 0.2.1(vue@3.4.21)
 
 packages:
 
@@ -13961,18 +13958,6 @@ packages:
       vue: 3.4.21(typescript@5.4.5)
       vue-observe-visibility: 2.0.0-alpha.1(vue@3.4.21)
       vue-resize: 2.0.0-alpha.1(vue@3.4.21)
-    dev: true
-
-  /vue3-toastify@0.2.1(vue@3.4.21):
-    resolution: {integrity: sha512-u4i5LCu1q5qs4L4Kbjb4u8NipCS8ox1fCHQ6XFS62676xnA6Q/AJRpZEkAurTMp723LeH6eQX6k9+24bKf1T4Q==}
-    engines: {node: '>=16', npm: '>=7'}
-    peerDependencies:
-      vue: '>=3.2.0'
-    peerDependenciesMeta:
-      vue:
-        optional: true
-    dependencies:
-      vue: 3.4.21(typescript@5.4.5)
     dev: true
 
   /vue@3.4.21(typescript@5.4.5):

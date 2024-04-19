@@ -54,5 +54,7 @@ useHead({
         onBeforeEnter,
       }"
     />
+
+    <ToastContainer />
   </NuxtLayout>
 </template>

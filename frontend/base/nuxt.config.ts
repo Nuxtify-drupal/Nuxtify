@@ -30,10 +30,6 @@ export default defineNuxtConfig({
     },
   },
 
-  css: [
-    'vue3-toastify/dist/index.css',
-  ],
-
   app: {
     rootId: 'app',
   },
