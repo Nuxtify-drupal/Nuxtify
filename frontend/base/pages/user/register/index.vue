@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
 
 const isLoading = ref(false)
@@ -20,6 +20,7 @@ async function register(e: SubmitEvent) {
       email.value,
       password.value,
       password_confirm.value,
+      locale.value,
     )
 
     if (error)

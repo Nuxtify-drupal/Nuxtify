@@ -1,9 +1,12 @@
-export default async function useAuth() {
-  const { locale } = useI18n()
+import process from 'node:process'
 
+export default async function useAuth() {
   const user = useState<User | undefined>('user')
 
   const getUser = async (): Promise<User | undefined> => {
+    if (process.client)
+      return
+
     const uid = useCookie('auth.uid')
     const token = useCookie('auth.token')
 
@@ -31,7 +34,7 @@ export default async function useAuth() {
     user.value = await getUser()
   })
 
-  const signIn = async (email: string, password: string) => {
+  const signIn = async (email: string, password: string, locale: string) => {
     if (!email.length || !password.length) {
       return {
         data: null,
@@ -46,7 +49,7 @@ export default async function useAuth() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          langcode: locale.value,
+          langcode: locale,
           email,
           password,
         }),
@@ -82,6 +85,7 @@ export default async function useAuth() {
     email: string,
     password: string,
     password_confirm: string,
+    locale: string,
   ) => {
     if (!email.length || !password.length) {
       return {
@@ -104,7 +108,7 @@ export default async function useAuth() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          langcode: locale.value,
+          langcode: locale,
           email,
           password,
           password_confirm,
@@ -176,6 +180,29 @@ export default async function useAuth() {
     }
   }
 
+  const refresh = async () => {
+    const token = useCookie('auth.token')
+
+    try {
+      const response = await fetch('/api/auth/refresh', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          token: token.value,
+        }),
+      })
+
+      if (!response || Math.floor(response.status / 100) !== 2) {
+        const json = await response.json()
+
+        throw new Error(json.message)
+      }
+    }
+    catch (error) {}
+  }
+
   const signOut = async () => {
     const uid = useCookie('auth.uid')
     const token = useCookie('auth.token')
@@ -191,6 +218,7 @@ export default async function useAuth() {
     signIn,
     signUp,
     verify,
+    refresh,
     signOut,
   }
 }

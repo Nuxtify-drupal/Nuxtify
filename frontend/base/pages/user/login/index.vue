@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
 
 const isLoading = ref(false)
@@ -18,6 +18,7 @@ async function login(e: SubmitEvent) {
     const { error } = await signIn(
       email.value,
       password.value,
+      locale.value,
     )
 
     if (error)

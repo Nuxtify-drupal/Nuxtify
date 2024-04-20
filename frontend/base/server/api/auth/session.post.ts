@@ -7,14 +7,17 @@ export default eventHandler(async (event): Promise<User | undefined> => {
   const uid = body.uid
 
   try {
-    const user = await $fetch<{
-      [key: string]: { value: string }[]
-    }>(`${process.env.NUXT_PUBLIC_BACKEND_URL}/user/${uid}?_format=json`, {
+    const response = await fetch(`${process.env.NUXT_PUBLIC_BACKEND_URL}/user/${uid}?_format=json`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
       },
     })
+
+    if (!response || response.status !== 200)
+      return
+
+    const user = await response.json()
 
     return {
       id: uid,

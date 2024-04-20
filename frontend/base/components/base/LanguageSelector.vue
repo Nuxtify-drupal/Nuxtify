@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath()
-const { locale, t } = useI18n()
+const { locale: initialLocale, t } = useI18n()
+
+const locale = ref(initialLocale.value)
 
 watch(
-  () => locale.value,
-  () => {
-    return navigateTo(switchLocalePath(locale.value))
+  locale,
+  async () => {
+    return await navigateTo(switchLocalePath(locale.value))
   },
 )
 

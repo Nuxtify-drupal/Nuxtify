@@ -5,31 +5,24 @@ interface routeAuthMeta {
 
 export default defineNuxtRouteMiddleware(async (to, _from) => {
   const routeAuthMeta = to.meta.auth as routeAuthMeta
+  const { user, refresh } = await useAuth()
 
   const uid = useCookie('auth.uid')
   const token = useCookie('auth.token')
+
+  if (!user.value) {
+    uid.value = undefined
+    token.value = undefined
+  }
+
+  if (user)
+    await refresh()
 
   if (!uid.value || !token.value) {
     if (routeAuthMeta?.authOnly)
       return navigateTo('/user/login')
 
     return
-  }
-
-  let user
-
-  try {
-    user = await $fetch('/api/auth/session', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ uid: uid.value, token: token.value }),
-    })
-  }
-  catch (error) {
-    uid.value = undefined
-    token.value = undefined
   }
 
   if (!user) {
