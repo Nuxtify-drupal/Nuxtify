@@ -55,6 +55,6 @@ useHead({
       }"
     />
 
-    <ToastContainer />
+    <LazyToastContainer />
   </NuxtLayout>
 </template>

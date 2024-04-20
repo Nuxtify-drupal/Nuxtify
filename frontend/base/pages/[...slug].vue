@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import type { NodeUnion, RouteInternal } from '#build/graphql-operations'
 
+const { finalizePendingLocaleChange } = useI18n()
+
+// Finalize the pending locale change before fetching the route data.
+await finalizePendingLocaleChange()
+
 const config = useRuntimeConfig()
 
 const route = useRoute()

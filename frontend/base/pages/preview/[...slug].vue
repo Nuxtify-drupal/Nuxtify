@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import type { NodeUnion } from '#build/graphql-operations'
 
+const { finalizePendingLocaleChange } = useI18n()
+
+// Finalize the pending locale change before fetching the route data.
+await finalizePendingLocaleChange()
+
 definePageMeta({
   layout: 'preview',
 })

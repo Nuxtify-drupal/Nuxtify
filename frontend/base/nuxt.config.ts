@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     '/preview/**': {
       robots: false,
       sitemap: false,
+      cache: false,
       security: {
         headers: {
           contentSecurityPolicy: {
