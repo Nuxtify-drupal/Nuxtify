@@ -4,9 +4,6 @@ export default async function useAuth() {
   const user = useState<User | undefined>('user')
 
   const getUser = async (): Promise<User | undefined> => {
-    if (process.client)
-      return
-
     const uid = useCookie('auth.uid')
     const token = useCookie('auth.token')
 

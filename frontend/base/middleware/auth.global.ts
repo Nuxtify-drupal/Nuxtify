@@ -13,25 +13,21 @@ export default defineNuxtRouteMiddleware(async (to, _from) => {
   if (!user.value) {
     uid.value = undefined
     token.value = undefined
-  }
 
-  if (user)
-    await refresh()
-
-  if (!uid.value || !token.value) {
     if (routeAuthMeta?.authOnly)
       return navigateTo('/user/login')
-
-    return
   }
 
-  if (!user) {
-    if (routeAuthMeta?.authOnly)
-      return navigateTo('/user/login')
+  if (user.value && token.value) {
+    const lastUserRefresh = useLocalStorage('user.refresh.last', Date.now())
 
-    return
+    // Refresh the auth token every 5 minutes.
+    if (Date.now() - lastUserRefresh.value >= 1000 * 60 * 5) {
+      await refresh()
+      lastUserRefresh.value = Date.now()
+    }
   }
 
-  if (routeAuthMeta?.anonOnly && user)
+  if (routeAuthMeta?.anonOnly && user.value)
     return navigateTo('/')
 })
