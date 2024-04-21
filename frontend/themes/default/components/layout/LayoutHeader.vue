@@ -12,7 +12,7 @@ const localePath = useLocalePath()
     >
       <div class="flex items-center gap-6">
         <NuxtLink
-          class="flex items-center gap-2 text-xl md:text-2xl"
+          class="flex items-center gap-4 text-xl md:gap-6 md:text-2xl"
           :to="localePath('/')"
         >
           <NuxtImg

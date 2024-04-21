@@ -3,10 +3,11 @@ import type { MenuAvailable } from '#build/graphql-operations'
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
+const user = await useAuth()
 
 const route = useRoute()
 
-const { data: menu, refresh } = await useAsyncData(
+const { data: menu } = await useAsyncData(
   'menu',
   async () => await useGraphqlQuery(
     'menu',
@@ -15,12 +16,8 @@ const { data: menu, refresh } = await useAsyncData(
       langcode: locale.value,
     },
   ),
-)
-
-watch(
-  () => locale.value,
-  async () => {
-    await refresh()
+  {
+    watch: [locale, () => user],
   },
 )
 

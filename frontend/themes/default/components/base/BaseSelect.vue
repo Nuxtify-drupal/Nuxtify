@@ -25,19 +25,28 @@ const model = defineModel()
 </script>
 
 <template>
-  <select
-    :id="id"
-    v-model="model"
-    :aria-label="label"
-    class="bg-white dark:bg-stone-950"
+  <div
+    class="relative flex items-center"
   >
-    <option
-      v-for="option in options"
-      :key="option.value"
-      :value="option.value"
-      :selected="model === option.value"
+    <select
+      :id="id"
+      v-model="model"
+      :aria-label="label"
+      class="px-2 py-1 pr-6 bg-white rounded-lg appearance-none dark:bg-stone-950"
     >
-      {{ option.label }}
-    </option>
-  </select>
+      <option
+        v-for="option in options"
+        :key="option.value"
+        :value="option.value"
+        :selected="model === option.value"
+      >
+        {{ option.label }}
+      </option>
+    </select>
+
+    <Icon
+      name="mdi:chevron-up-down"
+      class="absolute w-4 h-4 right-1"
+    />
+  </div>
 </template>
