@@ -20,7 +20,7 @@
     "require": {
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "~1.0",
-        "dobefu/nuxtify_profile": "^1.0.0-alpha6",
+        "dobefu/nuxtify_profile": "^1.0.x-dev",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10"
     },

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NodeUnion, RouteInternal, RoutePreviewQuery, RouteQuery } from '#build/graphql-operations'
+import type { NodeUnion, RouteInternal } from '#build/graphql-operations'
 
 const { finalizePendingLocaleChange } = useI18n()
 
