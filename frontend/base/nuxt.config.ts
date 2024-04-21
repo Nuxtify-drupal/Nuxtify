@@ -35,11 +35,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/**': {
-      cache: {
-        maxAge: process.env.NODE_ENV === 'development' ? 0 : 60,
-      },
-    },
     '/api/**': {
       robots: false,
       sitemap: false,
