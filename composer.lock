@@ -993,7 +993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "dddadcd83877a3e3ab755882759cd4d03997b3e0"
+                "reference": "aca6863d09b196628e16da3a4c1840dd56265c6b"
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
@@ -1014,6 +1014,7 @@
                 "drupal/pathauto": "^1.12",
                 "drupal/r4032login": "^2.2",
                 "drupal/restui": "^1.21",
+                "drupal/single_content_sync": "^1.4",
                 "drupal/string_field_formatter": "^2.0",
                 "drupal/user_registrationpassword": "^2.0",
                 "drush/drush": "^12.5",
@@ -1079,7 +1080,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-04-21T14:58:37+00:00"
+            "time": "2024-04-27T15:52:12+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2299,17 +2300,17 @@
         },
         {
             "name": "drupal/graphql_compose",
-            "version": "2.1.0-beta5",
+            "version": "2.1.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose.git",
-                "reference": "2.1.0-beta5"
+                "reference": "2.1.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta5.zip",
-                "reference": "2.1.0-beta5",
-                "shasum": "958c7a473ebd266b95107bd68cbd7582354a5095"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta6.zip",
+                "reference": "2.1.0-beta6",
+                "shasum": "c2f234c35c4746b44765c7320d18b11c8f2ae6b3"
             },
             "require": {
                 "doctrine/inflector": "^2",
@@ -2343,8 +2344,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0-beta5",
-                    "datestamp": "1713355512",
+                    "version": "2.1.0-beta6",
+                    "datestamp": "1713741251",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -2374,17 +2375,17 @@
         },
         {
             "name": "drupal/graphql_compose_preview",
-            "version": "1.0.0-beta6",
+            "version": "1.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose_preview.git",
-                "reference": "1.0.0-beta6"
+                "reference": "1.0.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0-beta6.zip",
-                "reference": "1.0.0-beta6",
-                "shasum": "d8add98c51bad1cc97ed8f235666f9b748fc3983"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0-beta7.zip",
+                "reference": "1.0.0-beta7",
+                "shasum": "3d9098bed3a1a977fa79c2b2cf3b8e5c6e1491c2"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11",
@@ -2399,8 +2400,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta6",
-                    "datestamp": "1712983249",
+                    "version": "1.0.0-beta7",
+                    "datestamp": "1714003953",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3235,6 +3236,63 @@
             "homepage": "https://www.drupal.org/project/restui",
             "support": {
                 "source": "https://git.drupalcode.org/project/restui"
+            }
+        },
+        {
+            "name": "drupal/single_content_sync",
+            "version": "1.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/single_content_sync.git",
+                "reference": "1.4.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/single_content_sync-1.4.4.zip",
+                "reference": "1.4.4",
+                "shasum": "55194b9c2bd4f15dfb69d451fbef63740b68a8c5"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "ext-dom": "*",
+                "ext-zip": "*",
+                "php": ">=7.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.4.4",
+                    "datestamp": "1699421610",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Kuzava (nginex)",
+                    "homepage": "https://www.drupal.org/u/nginex",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "artycal",
+                    "homepage": "https://www.drupal.org/user/3708798"
+                },
+                {
+                    "name": "nginex",
+                    "homepage": "https://www.drupal.org/user/2822325"
+                }
+            ],
+            "description": "This is a simple way of exporting a single node to yml file with possibility to import it on another environment.",
+            "homepage": "https://drupal.org/project/single_content_sync",
+            "support": {
+                "source": "https://cgit.drupalcode.org/single_content_sync",
+                "issues": "https://drupal.org/project/issues/single_content_sync"
             }
         },
         {
@@ -4177,16 +4235,16 @@
         },
         {
             "name": "iconify/json",
-            "version": "2.2.202",
+            "version": "2.2.204",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iconify/icon-sets.git",
-                "reference": "ab0be46ad9494c841687eb541a88d447c0e2318e"
+                "reference": "d119d5d8a9b7d462737a6ee6abc41618d8617fa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/ab0be46ad9494c841687eb541a88d447c0e2318e",
-                "reference": "ab0be46ad9494c841687eb541a88d447c0e2318e",
+                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/d119d5d8a9b7d462737a6ee6abc41618d8617fa3",
+                "reference": "d119d5d8a9b7d462737a6ee6abc41618d8617fa3",
                 "shasum": ""
             },
             "type": "library",
@@ -4203,9 +4261,9 @@
             "homepage": "https://iconify.design/icon-sets/",
             "support": {
                 "issues": "https://github.com/iconify/icon-sets/issues",
-                "source": "https://github.com/iconify/icon-sets/tree/2.2.202"
+                "source": "https://github.com/iconify/icon-sets/tree/2.2.204"
             },
-            "time": "2024-04-18T05:50:03+00:00"
+            "time": "2024-04-25T05:53:17+00:00"
         },
         {
             "name": "league/container",

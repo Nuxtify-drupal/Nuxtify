@@ -70,7 +70,7 @@ const layout = computed<LayoutSection[]>(() => {
     <div
       v-for="sections in layout"
       :key="sections.id"
-      class="flex flex-wrap"
+      class="flex flex-wrap gap-8"
     >
       <div
         v-for="(section, section_name) in sections.children"
