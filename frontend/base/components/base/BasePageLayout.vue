@@ -77,7 +77,7 @@ const layout = computed<LayoutSection[]>(() => {
         :key="section_name"
         class="flex-1"
       >
-        <div
+        <template
           v-for="(component, component_name) in section"
           :key="component_name"
         >
@@ -92,7 +92,7 @@ const layout = computed<LayoutSection[]>(() => {
             v-else-if="component.__typename === 'ParagraphFromLibrary'"
             v-bind="component.reusableParagraph.paragraphs"
           />
-        </div>
+        </template>
       </div>
     </div>
   </div>

@@ -41,6 +41,7 @@ useHead({
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
+    <LayoutMainContentSkip />
 
     <NuxtPage
       :transition="{

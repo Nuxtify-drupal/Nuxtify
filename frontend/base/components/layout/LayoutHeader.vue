@@ -19,7 +19,7 @@ const localePath = useLocalePath()
             class="w-8 h-8 md:w-12 md:h-12" src="/logo.svg"
             :alt="t('site_logo', { name: config.public.siteName })"
           />
-          {{ config.public.siteName }}
+          <h1>{{ config.public.siteName }}</h1>
         </NuxtLink>
       </div>
 

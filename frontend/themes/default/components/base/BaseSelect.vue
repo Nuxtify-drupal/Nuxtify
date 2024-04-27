@@ -9,9 +9,12 @@ defineProps({
     required: true,
   },
   options: {
-    type: Array as PropType<{
-      value: string
-      label: string
+    type: Object as PropType<{
+      key: string
+      options: {
+        value: string
+        label: string
+      }[]
     }[]>,
     required: true,
   },
@@ -34,14 +37,20 @@ const model = defineModel()
       :aria-label="label"
       class="px-2 py-1 pr-6 bg-white rounded-lg appearance-none dark:bg-stone-950"
     >
-      <option
-        v-for="option in options"
-        :key="option.value"
-        :value="option.value"
-        :selected="model === option.value"
+      <optgroup
+        v-for="optgroup of options"
+        :key="optgroup.key"
+        :label="optgroup.key"
       >
-        {{ option.label }}
-      </option>
+        <option
+          v-for="option in optgroup.options"
+          :key="option.value"
+          :value="option.value"
+          :selected="model === option.value"
+        >
+          {{ option.label }}
+        </option>
+      </optgroup>
     </select>
 
     <Icon

@@ -11,10 +11,13 @@ watch(
   },
 )
 
-const options = computed(() => ([
-  { value: 'en', label: t('english') },
-  { value: 'nl', label: t('dutch') },
-]))
+const options = computed(() => ([{
+  key: t('language'),
+  options: [
+    { value: 'en', label: t('english') },
+    { value: 'nl', label: t('dutch') },
+  ],
+}]))
 </script>
 
 <template>
