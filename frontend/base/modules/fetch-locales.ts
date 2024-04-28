@@ -1,5 +1,5 @@
 import process from 'node:process'
-import { createResolver, defineNuxtModule } from '@nuxt/kit'
+import { defineNuxtModule } from '@nuxt/kit'
 
 interface Language {
   id: string
