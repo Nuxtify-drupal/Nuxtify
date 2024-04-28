@@ -9,8 +9,6 @@ interface Language {
 
 export default defineNuxtModule({
   async setup(options, nuxt) {
-    const { resolve } = createResolver(import.meta.url)
-
     const query = `{
       info {
         languages {
@@ -31,7 +29,7 @@ export default defineNuxtModule({
     )
 
     if (!response.ok)
-      throw new Error('Failed to fetch languages')
+      throw new Error('Failed to fetch languages. Is BACKEND_API_KEY set correctly?')
 
     const { data } = await response.json()
 
