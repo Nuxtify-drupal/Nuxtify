@@ -43,6 +43,8 @@ async function onBeforeEnter() {
   lang.value = i18nHead.value.htmlAttrs.lang
   dir.value = i18nHead.value.htmlAttrs.dir
 }
+
+defineOgImageComponent('LayoutOgImage')
 </script>
 
 <template>

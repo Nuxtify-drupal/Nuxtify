@@ -41,6 +41,10 @@ function setUserData() {
 
 setUserData()
 
+useHead({
+  title: userData.value?.name,
+})
+
 const unwatchData = watch(data, () => {
   setUserData()
 })
@@ -54,7 +58,7 @@ onBeforeRouteLeave((to, from) => {
 <template>
   <div class="max-w-6xl m-auto">
     <div v-if="userData" class="flex flex-col gap-8">
-      <div class="flex justify-between flex-wrap items-center">
+      <div class="flex flex-wrap items-center justify-between">
         <BasePageTitle>
           {{ userData.name }}
         </BasePageTitle>
