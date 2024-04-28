@@ -107,7 +107,11 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    // Set the full base URL only in production.
+    // This will suppress a warning in development.
+    baseUrl: (process.env.NODE_ENV !== 'development')
+      ? process.env.NUXT_PUBLIC_BASE_URL
+      : undefined,
     skipSettingLocaleOnNavigate: true,
     bundle: {
       dropMessageCompiler: true,
@@ -117,12 +121,10 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: false,
     },
-    langDir: 'i18n',
-    locales: [
-      { code: 'en', iso: 'en', file: 'en.yml' },
-      { code: 'nl', iso: 'nl', file: 'nl.yml' },
-    ],
     strategy: 'prefix_except_default',
+
+    // Please note that the locales are dynamically loaded in the
+    // ./modules/fetch-locales.ts module.
   },
 
   robots: {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath()
-const { locale: initialLocale, t } = useI18n()
+const { locale: initialLocale, t, locales } = useI18n()
 
 const locale = ref(initialLocale.value)
 
@@ -13,10 +13,10 @@ watch(
 
 const options = computed(() => ([{
   key: t('language'),
-  options: [
-    { value: 'en', label: t('english') },
-    { value: 'nl', label: t('dutch') },
-  ],
+  options: locales.value.map(locale => ({
+    value: locale.code ?? '',
+    label: t(locale.name?.toLowerCase() ?? ''),
+  })),
 }]))
 </script>
 

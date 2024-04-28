@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const { finalizePendingLocaleChange } = useI18n()
 
-async function onBeforeEnter() {
-  await finalizePendingLocaleChange()
-}
-
 const config = useRuntimeConfig()
 
 const i18nHead = useLocaleHead({
@@ -12,10 +8,13 @@ const i18nHead = useLocaleHead({
   addSeoAttributes: true,
 })
 
+const lang = ref(i18nHead.value.htmlAttrs.lang)
+const dir = ref(i18nHead.value.htmlAttrs.dir)
+
 useHead({
   htmlAttrs: {
-    lang: i18nHead.value.htmlAttrs!.lang,
-    dir: i18nHead.value.htmlAttrs!.dir,
+    lang,
+    dir,
     class: 'h-full',
   },
   bodyAttrs: {
@@ -37,6 +36,13 @@ useHead({
   title: '',
   titleTemplate: `%s | ${config.public.siteName}`,
 })
+
+async function onBeforeEnter() {
+  await finalizePendingLocaleChange()
+
+  lang.value = i18nHead.value.htmlAttrs.lang
+  dir.value = i18nHead.value.htmlAttrs.dir
+}
 </script>
 
 <template>
