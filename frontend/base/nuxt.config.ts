@@ -1,4 +1,5 @@
 import process from 'node:process'
+import loadingTemplate from './loading/index'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -34,6 +35,12 @@ export default defineNuxtConfig({
     rootId: 'app',
   },
 
+  site: {
+    url: process.env.NUXT_PUBLIC_BASE_URL,
+    name: process.env.NUXT_PUBLIC_SITE_NAME,
+    indexable: (process.env.NODE_ENV !== 'development'),
+  },
+
   routeRules: {
     '/api/**': {
       robots: false,
@@ -61,6 +68,15 @@ export default defineNuxtConfig({
       brotli: true,
     },
     minify: true,
+  },
+
+  devServer: {
+    loadingTemplate: (data) => {
+      return loadingTemplate({
+        ...data,
+        appName: process.env.NUXT_PUBLIC_SITE_NAME ?? '',
+      })
+    },
   },
 
   modules: [

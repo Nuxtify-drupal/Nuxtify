@@ -1,0 +1,84 @@
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: #f3f4f6;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+body::before {
+  background: linear-gradient(0deg, #a8a29e, transparent);
+  content: "";
+  inset: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+.logo {
+  max-width: 16rem;
+}
+
+.throbber {
+  animation: spin 1s infinite;
+  border: 0.25rem solid transparent;
+  border-top-color: #000;
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1c1917;
+  }
+
+  body::before {
+    background: linear-gradient(180deg, #292524, transparent);
+  }
+
+  .throbber {
+    border-top-color: #fff;
+  }
+}
+
+/* Helper classes */
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
