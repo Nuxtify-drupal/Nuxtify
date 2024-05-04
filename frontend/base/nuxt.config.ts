@@ -41,6 +41,20 @@ export default defineNuxtConfig({
     indexable: (process.env.NODE_ENV !== 'development'),
   },
 
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
+    },
+    minify: true,
+    storage: {
+      cacheData: {
+        driver: 'fs',
+        base: '.data/cacheData',
+      },
+    },
+  },
+
   routeRules: {
     '/api/**': {
       robots: false,
@@ -60,14 +74,6 @@ export default defineNuxtConfig({
         },
       },
     },
-  },
-
-  nitro: {
-    compressPublicAssets: {
-      gzip: true,
-      brotli: true,
-    },
-    minify: true,
   },
 
   devServer: {

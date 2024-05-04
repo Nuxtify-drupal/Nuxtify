@@ -7,4 +7,12 @@ export default defineGraphqlServerOptions({
   serverFetchOptions(event: H3Event, operation?: string, operationName?: string) {
     return baseServerOptions.serverFetchOptions(event, operation, operationName)
   },
+
+  async doGraphqlRequest({ event, operation, operationName, operationDocument, variables }: { event: H3Event, operation: any, operationName: string, operationDocument: string, variables: Record<string, any> }) {
+    return await baseServerOptions.doGraphqlRequest({ event, operation, operationName, operationDocument, variables })
+  },
+
+  async onServerResponse(event: H3Event, response: Response) {
+    return await baseServerOptions.onServerResponse(event, response)
+  },
 })
