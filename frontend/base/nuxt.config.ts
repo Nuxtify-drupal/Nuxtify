@@ -49,8 +49,7 @@ export default defineNuxtConfig({
     minify: true,
     storage: {
       cacheData: {
-        driver: 'fs',
-        base: '.data/cacheData',
+        driver: 'lruCache',
       },
     },
   },

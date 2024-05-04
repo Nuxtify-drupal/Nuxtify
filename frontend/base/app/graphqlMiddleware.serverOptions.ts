@@ -24,7 +24,9 @@ function getCacheKey(url: URL): string {
   const path = url.pathname.replace('/api/graphql', '')
   const params = `${decodeURIComponent(url.searchParams.toString())}&`
 
-  return `${path}/${params}`
+  const cacheKey = `${path}:${params}`
+
+  return cacheKey
 }
 
 export default defineGraphqlServerOptions({
