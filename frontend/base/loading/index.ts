@@ -14,6 +14,7 @@ const logo = fs.readFileSync('./base/public/logo.svg', 'base64')
 interface Data {
   loading?: string
   appName: string
+  backendUrl: string
 }
 
 export default (data: Data) => {
