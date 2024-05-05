@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
   for (const tag of tags) {
     for (const key of storageKeys) {
-      if (key.includes(`${tag.replace('/', ':')}&`))
+      if (key.includes(`${tag.replace('/', ':')}`))
         await storage.removeItem(key)
     }
   }
