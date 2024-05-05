@@ -72,6 +72,15 @@ export default (data: Data) => {
         }
         check()
       }
+
+      const resizeObserver = new ResizeObserver(entries => {
+        window.parent.postMessage(
+          { name: 'setFrameHeight', height: entries[0].target.scrollHeight },
+          '${data.backendUrl}',
+        )
+      })
+
+      resizeObserver.observe(document.documentElement)
     </script>
   </body>
 </html>

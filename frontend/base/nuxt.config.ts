@@ -80,6 +80,7 @@ export default defineNuxtConfig({
       return loadingTemplate({
         ...data,
         appName: process.env.NUXT_PUBLIC_SITE_NAME ?? '',
+        backendUrl: process.env.NUXT_PUBLIC_BACKEND_URL ?? '',
       })
     },
   },
@@ -107,7 +108,7 @@ export default defineNuxtConfig({
   },
 
   graphqlMiddleware: {
-    graphqlEndpoint: `${process.env.NUXT_PUBLIC_BACKEND_URL}/graphql`,
+    graphqlEndpoint: `${process.env.NUXT_PUBLIC_BACKEND_URL}/raphql`,
     serverApiPrefix: '/api/graphql',
     autoImportPatterns: [
       './base/queries/**/*.gql',

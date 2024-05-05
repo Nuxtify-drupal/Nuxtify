@@ -6,6 +6,7 @@ body {
   background-color: #f3f4f6;
   font-family: sans-serif;
   font-size: 1.5rem;
+  overflow: hidden;
 }
 
 body::before {
@@ -27,12 +28,13 @@ body::before {
   border-radius: 50%;
   flex-shrink: 0;
   height: 2.5rem;
+  transform-origin: center;
   width: 2.5rem;
 }
 
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    transform: rotateZ(360deg);
   }
 }
 
