@@ -53,6 +53,9 @@ deploy:
     - ssh "$SSH_USER"@"$SSH_HOST" -T "cd $BACKEND_DIR/web && ../vendor/bin/drush user:password root $(openssl rand -base64 $(shuf -i 24-48 -n 1))"
     - ssh "$SSH_USER"@"$SSH_HOST" -T "cd $BACKEND_DIR/web/sites/default && chmod ugo-w ."
 
+    # Clear all caches, just to be safe
+    - ssh "$SSH_USER"@"$SSH_HOST" -T "cd $BACKEND_DIR/web && ../vendor/bin/drush cache:rebuild"
+
     # Navigate to the frontend directory
     - cd frontend
 
