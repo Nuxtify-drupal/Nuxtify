@@ -108,7 +108,7 @@ export default defineNuxtConfig({
   },
 
   graphqlMiddleware: {
-    graphqlEndpoint: `${process.env.NUXT_PUBLIC_BACKEND_URL}/raphql`,
+    graphqlEndpoint: `${process.env.NUXT_PUBLIC_BACKEND_URL}/graphql`,
     serverApiPrefix: '/api/graphql',
     autoImportPatterns: [
       './base/queries/**/*.gql',
