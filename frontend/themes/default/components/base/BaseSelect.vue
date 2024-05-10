@@ -35,7 +35,7 @@ const model = defineModel()
       :id="id"
       v-model="model"
       :aria-label="label"
-      class="px-2 py-1 pr-6 bg-white rounded-lg appearance-none dark:bg-stone-950"
+      class="px-2 py-1 bg-white rounded-lg appearance-none pe-6 dark:bg-stone-950"
     >
       <optgroup
         v-for="optgroup of options"
@@ -55,7 +55,7 @@ const model = defineModel()
 
     <Icon
       name="mdi:chevron-up-down"
-      class="absolute w-4 h-4 right-1"
+      class="absolute w-4 h-4 end-1"
     />
   </div>
 </template>

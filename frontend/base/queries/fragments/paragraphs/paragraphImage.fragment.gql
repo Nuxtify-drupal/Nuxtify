@@ -12,6 +12,7 @@ fragment paragraphImage on ParagraphImage {
       }
     }
   }
+  align
   composition {
     position {
       parentId

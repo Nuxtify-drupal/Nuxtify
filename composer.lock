@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09d508115d697980602b24b9164ef7ad",
+    "content-hash": "6fa19c6f369fbfafd628b8f76e20d2c2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -989,11 +989,11 @@
         },
         {
             "name": "dobefu/nuxtify_profile",
-            "version": "1.0.0-beta2",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "a7252a5564d4c50bb1b29b5a9f62faa08fbe2b0c"
+                "reference": "e2686e7505d20738c1558c46f121a4ddebe2cf4e"
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
@@ -1024,6 +1024,7 @@
                 "composer/installers": "^2.0",
                 "drupal/core-dev": "^10.2"
             },
+            "default-branch": true,
             "type": "drupal-profile",
             "extra": {
                 "installer-name": "nuxtify",
@@ -1079,7 +1080,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-05-05T15:26:01+00:00"
+            "time": "2024-05-10T15:41:15+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2299,17 +2300,17 @@
         },
         {
             "name": "drupal/graphql_compose",
-            "version": "2.1.0-beta6",
+            "version": "2.1.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose.git",
-                "reference": "2.1.0-beta6"
+                "reference": "2.1.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta6.zip",
-                "reference": "2.1.0-beta6",
-                "shasum": "c2f234c35c4746b44765c7320d18b11c8f2ae6b3"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta7.zip",
+                "reference": "2.1.0-beta7",
+                "shasum": "d23810475a5d6de9dca5ae0ebe063f6a8deb16dc"
             },
             "require": {
                 "doctrine/inflector": "^2",
@@ -2343,8 +2344,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0-beta6",
-                    "datestamp": "1713741251",
+                    "version": "2.1.0-beta7",
+                    "datestamp": "1715124654",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4250,16 +4251,16 @@
         },
         {
             "name": "iconify/json",
-            "version": "2.2.206",
+            "version": "2.2.208",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iconify/icon-sets.git",
-                "reference": "324d560bb9f60581c71a212f15c4bb8e26fa1cee"
+                "reference": "6e1b26dfe6a7dd89763e89a6f5779d386be1d366"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/324d560bb9f60581c71a212f15c4bb8e26fa1cee",
-                "reference": "324d560bb9f60581c71a212f15c4bb8e26fa1cee",
+                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/6e1b26dfe6a7dd89763e89a6f5779d386be1d366",
+                "reference": "6e1b26dfe6a7dd89763e89a6f5779d386be1d366",
                 "shasum": ""
             },
             "type": "library",
@@ -4276,9 +4277,9 @@
             "homepage": "https://iconify.design/icon-sets/",
             "support": {
                 "issues": "https://github.com/iconify/icon-sets/issues",
-                "source": "https://github.com/iconify/icon-sets/tree/2.2.206"
+                "source": "https://github.com/iconify/icon-sets/tree/2.2.208"
             },
-            "time": "2024-05-02T05:34:27+00:00"
+            "time": "2024-05-09T05:48:19+00:00"
         },
         {
             "name": "league/container",
@@ -8223,30 +8224,31 @@
         },
         {
             "name": "webflo/drupal-finder",
-            "version": "1.2.2",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webflo/drupal-finder.git",
-                "reference": "c8e5dbe65caef285fec8057a4c718a0d4138d1ee"
+                "reference": "1fa65484857c7a2e4dcf0d9e0b47198fe0681b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webflo/drupal-finder/zipball/c8e5dbe65caef285fec8057a4c718a0d4138d1ee",
-                "reference": "c8e5dbe65caef285fec8057a4c718a0d4138d1ee",
+                "url": "https://api.github.com/repos/webflo/drupal-finder/zipball/1fa65484857c7a2e4dcf0d9e0b47198fe0681b8a",
+                "reference": "1fa65484857c7a2e4dcf0d9e0b47198fe0681b8a",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*"
+                "composer-runtime-api": "^2.2",
+                "php": ">=8.1"
             },
             "require-dev": {
                 "mikey179/vfsstream": "^1.6",
-                "phpunit/phpunit": "^4.8"
+                "phpunit/phpunit": "^10.4"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src/DrupalFinder.php"
-                ]
+                "psr-4": {
+                    "DrupalFinder\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -8258,12 +8260,12 @@
                     "email": "florian@webflo.org"
                 }
             ],
-            "description": "Helper class to locate a Drupal installation from a given path.",
+            "description": "Helper class to locate a Drupal installation.",
             "support": {
                 "issues": "https://github.com/webflo/drupal-finder/issues",
-                "source": "https://github.com/webflo/drupal-finder/tree/1.2.2"
+                "source": "https://github.com/webflo/drupal-finder/tree/1.3.0"
             },
-            "time": "2020-10-27T09:42:17+00:00"
+            "time": "2024-05-08T21:22:39+00:00"
         },
         {
             "name": "webonyx/graphql-php",
@@ -8335,7 +8337,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dobefu/nuxtify_profile": 10
+        "dobefu/nuxtify_profile": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

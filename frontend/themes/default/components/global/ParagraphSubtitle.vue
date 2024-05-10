@@ -4,11 +4,21 @@ defineProps({
     type: String,
     required: true,
   },
+  align: {
+    type: String as PropType<'left' | 'right' | 'center'>,
+    default: 'left',
+  },
 })
 </script>
 
 <template>
-  <h3 class="text-2xl font-semibold">
+  <h3
+    class="text-2xl font-semibold"
+    :class="{
+      'text-end': align === 'right',
+      'text-center': align === 'center',
+    }"
+  >
     {{ title }}
   </h3>
 </template>

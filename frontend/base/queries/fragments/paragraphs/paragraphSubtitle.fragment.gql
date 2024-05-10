@@ -1,6 +1,7 @@
 fragment paragraphSubtitle on ParagraphSubtitle {
   __typename
   title
+  align
   composition {
     position {
       parentId
