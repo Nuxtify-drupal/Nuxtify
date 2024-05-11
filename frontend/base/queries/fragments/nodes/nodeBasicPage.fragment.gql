@@ -4,6 +4,7 @@
 
 #import "~/base/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
 #import "~/base/queries/fragments/paragraphs/paragraphFromLibrary.fragment.gql"
+#import "~/base/queries/fragments/paragraphs/paragraphContainer.fragment.gql"
 
 fragment nodeBasicPage on NodeBasicPage {
   title
@@ -16,6 +17,7 @@ fragment nodeBasicPage on NodeBasicPage {
   layout {
     ...ParagraphUnion
     ...paragraphFromLibrary
+    ...paragraphContainer
   }
   translations {
     path

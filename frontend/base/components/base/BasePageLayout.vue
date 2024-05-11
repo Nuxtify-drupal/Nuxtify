@@ -59,6 +59,36 @@ const layout = computed<LayoutSection[]>(() => {
 
   return sections
 })
+
+const instance = getCurrentInstance()
+const defaultComponent = resolveComponent('ParagraphNotImplemented')
+
+function doesComponentExist(component: ParagraphUnion) {
+  return !!instance?.appContext.components[component.__typename ?? '']
+}
+
+function getDynamicComponent(component: ParagraphUnion) {
+  if (component.__typename === 'ParagraphFromLibrary')
+    return component.reusableParagraph.paragraphs.__typename
+
+  if (!doesComponentExist(component))
+    return defaultComponent
+
+  return component.__typename || 'ParagraphNotImplemented'
+}
+
+function getComponentProps(component: ParagraphUnion) {
+  if (component.__typename === 'ParagraphFromLibrary') {
+    const { __typename, composition, ...sanitisedComponent } = component.reusableParagraph.paragraphs
+    return sanitisedComponent
+  }
+
+  if (!doesComponentExist(component))
+    return { props: { type: component } }
+
+  const { __typename, composition, ...sanitisedComponent } = component
+  return sanitisedComponent
+}
 </script>
 
 <template>
@@ -82,15 +112,8 @@ const layout = computed<LayoutSection[]>(() => {
           :key="component_name"
         >
           <component
-            :is="component.__typename"
-            v-if="component.__typename !== 'ParagraphFromLibrary'"
-            v-bind="component"
-          />
-
-          <component
-            :is="component.reusableParagraph.paragraphs.__typename"
-            v-else-if="component.__typename === 'ParagraphFromLibrary'"
-            v-bind="component.reusableParagraph.paragraphs"
+            :is="getDynamicComponent(component)"
+            v-bind="getComponentProps(component)"
           />
         </template>
       </div>

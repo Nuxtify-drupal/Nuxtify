@@ -1,0 +1,14 @@
+#import "~/base/queries/fragments/paragraphs/paragraphUnion.fragment.gql"
+
+fragment paragraphContainer on ParagraphContainer {
+  __typename
+  paragraphs {
+    ...ParagraphUnion
+  }
+  composition {
+    position {
+      parentId
+      region
+    }
+  }
+}
