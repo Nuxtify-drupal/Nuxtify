@@ -993,7 +993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "b7749bd1544fc645f18c0d81b4046d5abf0486bc"
+                "reference": "c6b45bd66adc4a84177bf295b0f769bd1127c0f6"
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
@@ -1080,7 +1080,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-05-11T16:54:09+00:00"
+            "time": "2024-05-12T10:03:40+00:00"
         },
         {
             "name": "doctrine/annotations",

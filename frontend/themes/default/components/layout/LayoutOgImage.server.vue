@@ -10,7 +10,7 @@ const config = useRuntimeConfig()
 <template>
   <div class="w-full h-full text-3xl leading-6 text-white bg-stone-900">
     <div
-      class="flex items-center gap-8 px-12 py-8 mb-12 border-b bg-stone-800 border-stone-700"
+      class="flex flex-row items-center gap-8 px-12 py-8 mb-12 border-b bg-stone-800 border-stone-700"
     >
       <img src="/logo-512.png" height="96px" width="96px" alt="">
       <h1>

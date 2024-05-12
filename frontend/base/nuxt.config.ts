@@ -42,11 +42,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    compressPublicAssets: {
-      gzip: true,
-      brotli: true,
-    },
-    minify: true,
     storage: {
       cacheData: {
         driver: 'lruCache',

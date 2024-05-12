@@ -29,6 +29,11 @@ useHead({
   ],
   link: [
     {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico',
+    },
+    {
       rel: 'manifest',
       href: '/manifest.json',
     },
@@ -45,6 +50,14 @@ async function onBeforeEnter() {
 }
 
 defineOgImageComponent('LayoutOgImage')
+
+const route = useRoute()
+
+useSeoMeta({
+  ogImage: `${config.public.baseUrl}/__og-image__/image${route.path}/og.png`,
+  twitterImage: `${config.public.baseUrl}/__og-image__/image${route.path}/og.png`,
+  twitterCard: 'summary_large_image',
+})
 </script>
 
 <template>
@@ -65,6 +78,6 @@ defineOgImageComponent('LayoutOgImage')
       }"
     />
 
-    <LazyToastContainer />
+    <ToastContainer />
   </NuxtLayout>
 </template>

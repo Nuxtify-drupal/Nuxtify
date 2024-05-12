@@ -9,7 +9,7 @@ const config = useRuntimeConfig()
 
 <template>
   <div class="w-full h-full px-12 text-2xl">
-    <div class="flex items-center gap-4 py-8 mb-12 border-b border-gray-200">
+    <div class="flex flex-row items-center gap-4 py-8 mb-12 border-b border-gray-200">
       <img
         src="/logo-512.png"
         height="96px"

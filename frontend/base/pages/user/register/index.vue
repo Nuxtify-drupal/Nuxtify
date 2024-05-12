@@ -63,6 +63,11 @@ useHead({
     },
   ],
 })
+
+useSeoMeta({
+  twitterTitle: t('register'),
+  twitterDescription: t('register'),
+})
 </script>
 
 <template>
