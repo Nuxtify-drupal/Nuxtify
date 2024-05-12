@@ -14,7 +14,7 @@ const { locale } = useI18n()
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : ''
 const path = ref<string>(slug)
 
-const { data } = await useAsyncData(
+const { data } = await useLazyAsyncData(
   'route',
   async () => await useGraphqlQuery(
     'route',

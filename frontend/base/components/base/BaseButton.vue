@@ -22,7 +22,7 @@ const NuxtLink = resolveComponent('NuxtLink')
 <template>
   <component
     :is="to ? NuxtLink : 'button'"
-    class="px-4 py-3 text-white transition-colors bg-blue-600 rounded-lg gap-x-2 disabled:opacity-50 disabled:pointer-events-none"
+    class="gap-2 px-4 py-3 text-white transition-colors bg-blue-600 rounded-lg disabled:opacity-50 disabled:pointer-events-none"
     :disabled="loading || undefined"
     :to="to || undefined"
   >

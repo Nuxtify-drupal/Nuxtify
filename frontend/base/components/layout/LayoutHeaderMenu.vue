@@ -7,7 +7,7 @@ const user = await useAuth()
 
 const route = useRoute()
 
-const { data: menu } = await useAsyncData(
+const { data: menu } = await useLazyAsyncData(
   'menu',
   async () => await useGraphqlQuery(
     'menu',

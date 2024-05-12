@@ -12,26 +12,6 @@ definePageMeta({
   layout: 'preview',
 })
 
-const config = useRuntimeConfig()
-
-if (process.client) {
-  const { height: windowHeight } = useElementSize(document.body)
-
-  watch(
-    windowHeight,
-    () => {
-      if (windowHeight.value <= 0)
-        return
-
-      window.parent.postMessage(
-        { name: 'setFrameHeight', height: windowHeight.value },
-        config.public.backendUrl,
-      )
-    },
-    { immediate: true },
-  )
-}
-
 const route = useRoute()
 
 const slug = route.params.slug

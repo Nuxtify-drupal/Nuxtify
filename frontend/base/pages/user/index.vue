@@ -13,7 +13,7 @@ definePageMeta({
   },
 })
 
-const { data } = await useAsyncData(
+const { data } = await useLazyAsyncData(
   'user',
   async () => await useGraphqlQuery({
     name: 'user',
@@ -67,7 +67,7 @@ onBeforeRouteLeave((to, from) => {
           class="flex items-center gap-1"
           :to="localePath('/user/logout')"
         >
-          <Icon name="uil:signout" />
+          <Icon name="mdi:sign-out" />
           {{ t('logout') }}
         </BaseButton>
       </div>

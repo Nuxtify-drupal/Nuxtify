@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.16.1",
+    "@iconify-json/mdi": "^1.1.66",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/i18n": "^8.3.1",
     "@nuxtjs/seo": "2.0.0-rc.9",
@@ -26,7 +27,7 @@
     "eslint": "^8.57.0",
     "nuxt": "^3.11.2",
     "nuxt-graphql-middleware": "^4.0.0",
-    "nuxt-icon": "^0.6.10",
+    "nuxt-icon": "1.0.0-beta.4",
     "nuxt-security": "^1.4.3",
     "nuxt-seo-experiments": "4.0.0-rc.6",
     "pnpm": "^8.15.8",

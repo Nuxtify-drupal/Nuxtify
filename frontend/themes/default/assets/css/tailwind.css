@@ -6,6 +6,10 @@ html {
   color-scheme: light dark;
 }
 
+body {
+  @apply bg-gray-100 dark:bg-stone-900;
+}
+
 #app {
   @apply flex flex-col flex-1;
 }

@@ -8,12 +8,12 @@ const links = computed(() => {
     return [
       {
         to: '/user',
-        icon: 'uil:user',
+        icon: 'mdi:user-outline',
         text: user.value.name,
       },
       {
         to: '/user/logout',
-        icon: 'uil:signout',
+        icon: 'mdi:sign-out',
         text: t('logout'),
       },
     ]
@@ -22,12 +22,12 @@ const links = computed(() => {
   return [
     {
       to: '/user/login',
-      icon: 'uil:signin',
+      icon: 'mdi:sign-in',
       text: t('login'),
     },
     {
       to: '/user/register',
-      icon: 'uil:user-plus',
+      icon: 'mdi:user-add-outline',
       text: t('register'),
     },
   ]
