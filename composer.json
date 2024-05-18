@@ -3,7 +3,7 @@
     "description": "Quickly build a decoupled Drupal site with Nuxt 3 and GraphQL",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
+    "homepage": "https://github.com/Nuxtify-drupal/Nuxtify",
     "authors": [
         {
             "name": "Connor van Spronssen",
@@ -25,6 +25,7 @@
         "drupal/core-recommended": "^10"
     },
     "require-dev": {
+        "drupal/core-dev": "^10.2",
         "drush/drush": "^12.4",
         "phpunit/phpunit": "^9.6"
     },

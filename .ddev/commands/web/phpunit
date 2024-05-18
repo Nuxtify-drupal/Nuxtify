@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -f ./db/db.sqlite ]; then
+    rm ./db/db.sqlite
+fi
+
+touch ./db/db.sqlite
+
+export DATABASE_URL="sqlite:///%kernel.project_dir%/db/db.sqlite"
+./vendor/bin/phpunit -c web/core/phpunit.xml.dist web/profiles/contrib/nuxtify
