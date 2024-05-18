@@ -993,7 +993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/nuxtify",
-                "reference": "65ce440e9748ffe9fc6184de7621ba7d575d5954"
+                "reference": "b65e56e5f266b872b6b3532d9183093adbd29c23"
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
@@ -1080,7 +1080,7 @@
                 "issues": "https://drupal.org/project/issues/nuxtify",
                 "source": "https://git.drupalcode.org/project/nuxtify"
             },
-            "time": "2024-05-12T14:18:29+00:00"
+            "time": "2024-05-18T13:00:14+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2300,17 +2300,17 @@
         },
         {
             "name": "drupal/graphql_compose",
-            "version": "2.1.0-beta7",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose.git",
-                "reference": "2.1.0-beta7"
+                "reference": "2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0-beta7.zip",
-                "reference": "2.1.0-beta7",
-                "shasum": "d23810475a5d6de9dca5ae0ebe063f6a8deb16dc"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "da2d1941814bba39f0906573e7c5a7dfa7e304f8"
             },
             "require": {
                 "doctrine/inflector": "^2",
@@ -2337,6 +2337,7 @@
                 "drupal/paragraphs": "^1",
                 "drupal/redirect": "^1",
                 "drupal/schema_metatag": "^3",
+                "drupal/search_api": "^1",
                 "drupal/svg_image": "^3",
                 "drupal/token": "^1",
                 "drupal/viewfield": "^3"
@@ -2344,11 +2345,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0-beta7",
-                    "datestamp": "1715124654",
+                    "version": "2.1.0",
+                    "datestamp": "1715592731",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -2375,17 +2376,17 @@
         },
         {
             "name": "drupal/graphql_compose_preview",
-            "version": "1.0.0-beta7",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/graphql_compose_preview.git",
-                "reference": "1.0.0-beta7"
+                "reference": "1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0-beta7.zip",
-                "reference": "1.0.0-beta7",
-                "shasum": "3d9098bed3a1a977fa79c2b2cf3b8e5c6e1491c2"
+                "url": "https://ftp.drupal.org/files/projects/graphql_compose_preview-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "efa0b3792f02f0fdcad407ac74cbfbec7c8f6311"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11",
@@ -2400,8 +2401,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta7",
-                    "datestamp": "1714003953",
+                    "version": "1.0.0",
+                    "datestamp": "1715644169",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2431,7 +2432,7 @@
         },
         {
             "name": "drupal/graphql_compose_routes",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "require": {
                 "drupal/core": "^9.5 || ^10",
                 "drupal/graphql_compose": "*"
@@ -2439,8 +2440,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1699307444",
+                    "version": "2.1.0",
+                    "datestamp": "1715592731",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2793,6 +2794,10 @@
                 {
                     "name": "justin2pin",
                     "homepage": "https://www.drupal.org/user/278450"
+                },
+                {
+                    "name": "sethhill",
+                    "homepage": "https://www.drupal.org/user/676480"
                 }
             ],
             "description": "Layout Paragraphs",
@@ -4251,16 +4256,16 @@
         },
         {
             "name": "iconify/json",
-            "version": "2.2.208",
+            "version": "2.2.211",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iconify/icon-sets.git",
-                "reference": "6e1b26dfe6a7dd89763e89a6f5779d386be1d366"
+                "reference": "341b82b7a5e2dba8ebcb9492ac102ae494366ea3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/6e1b26dfe6a7dd89763e89a6f5779d386be1d366",
-                "reference": "6e1b26dfe6a7dd89763e89a6f5779d386be1d366",
+                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/341b82b7a5e2dba8ebcb9492ac102ae494366ea3",
+                "reference": "341b82b7a5e2dba8ebcb9492ac102ae494366ea3",
                 "shasum": ""
             },
             "type": "library",
@@ -4277,9 +4282,9 @@
             "homepage": "https://iconify.design/icon-sets/",
             "support": {
                 "issues": "https://github.com/iconify/icon-sets/issues",
-                "source": "https://github.com/iconify/icon-sets/tree/2.2.208"
+                "source": "https://github.com/iconify/icon-sets/tree/2.2.211"
             },
-            "time": "2024-05-09T05:48:19+00:00"
+            "time": "2024-05-17T05:08:41+00:00"
         },
         {
             "name": "league/container",

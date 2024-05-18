@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -f ./db/db.sqlite ]; then
-    rm ./db/db.sqlite
-fi
+export SIMPLETEST_BASE_URL="http://localhost"
+export SYMFONY_DEPRECATIONS_HELPER="disabled"
 
-touch ./db/db.sqlite
-
-export DATABASE_URL="sqlite:///%kernel.project_dir%/db/db.sqlite"
-./vendor/bin/phpunit -c web/core/phpunit.xml.dist web/profiles/contrib/nuxtify
+./vendor/bin/phpunit -c web/core web/profiles/contrib/nuxtify
