@@ -14,7 +14,7 @@ const { locale } = useI18n()
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : ''
 const path = ref<string>(slug)
 
-const { data } = await useLazyAsyncData(
+const { data } = await useAsyncData(
   'route',
   async () => await useGraphqlQuery(
     'route',
@@ -26,7 +26,7 @@ const { data } = await useLazyAsyncData(
 )
 
 if (data.value?.data?.route === null)
-  showError({ statusCode: 404, statusMessage: 'Not Found' })
+  throw createError({ statusCode: 404, statusMessage: 'Not Found', fatal: true })
 
 const page = ref<NodeUnion | undefined>(undefined)
 
@@ -66,7 +66,7 @@ const i18nRoutes = computed(() => {
   }
 
   // Remove the slug for the home page
-  if (`/${routes.en.slug}` === data.value?.data.info.home) {
+  if (`/${routes.en?.slug}` === data.value?.data.info.home) {
     for (const [langcode] of Object.entries(routes))
       routes[langcode].slug = ''
   }
@@ -111,8 +111,10 @@ useHead({
 </script>
 
 <template>
-  <BasePageLayout
-    v-if="page"
-    :page="page"
-  />
+  <div>
+    <BasePageLayout
+      v-if="page"
+      :page="page"
+    />
+  </div>
 </template>

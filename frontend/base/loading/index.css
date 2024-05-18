@@ -18,16 +18,19 @@ body::before {
 }
 
 .logo {
+  animation: pulse-shadow 1s infinite alternate;
+  filter: drop-shadow(2px 2px 0.2rem rgba(0, 0, 0, 0.5));
   max-width: 16rem;
 }
 
 .throbber {
-  animation: spin 1s infinite;
+  animation: spin 1s infinite linear;
   border: 0.25rem solid transparent;
   border-top-color: #000;
   border-radius: 50%;
   flex-shrink: 0;
   height: 2.5rem;
+  top: 0;
   transform-origin: center;
   width: 2.5rem;
 }
@@ -35,6 +38,12 @@ body::before {
 @keyframes spin {
   to {
     transform: rotateZ(360deg);
+  }
+}
+
+@keyframes pulse-shadow {
+  to {
+    filter: drop-shadow(2px 2px 1rem rgba(0, 0, 0, 0.5));
   }
 }
 
@@ -49,6 +58,13 @@ body::before {
 
   .throbber {
     border-top-color: #fff;
+    filter: drop-shadow(2px 2px 0.1rem rgba(128, 128, 128, 0.5));
+  }
+
+  @keyframes pulse-shadow {
+    to {
+      filter: drop-shadow(2px 2px 1rem rgba(128, 128, 128, 0.5));
+    }
   }
 }
 

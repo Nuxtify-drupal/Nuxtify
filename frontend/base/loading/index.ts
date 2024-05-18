@@ -37,7 +37,7 @@ export default (data: Data) => {
 
     <div class="flex flex-col h-full items-center justify-center">
       <a
-        href="https://github.com/Dobefu/nuxtify"
+        href="https://github.com/Nuxtify-drupal/Nuxtify"
         target="_blank"
         rel="noopener"
       >

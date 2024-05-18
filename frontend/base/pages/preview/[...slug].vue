@@ -52,7 +52,7 @@ else {
 }
 
 if (data.value === null)
-  showError({ statusCode: 404, statusMessage: 'Not Found' })
+  throw createError({ statusCode: 404, statusMessage: 'Not Found', fatal: true })
 
 const page = ref<NodeUnion | undefined>(undefined)
 

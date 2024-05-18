@@ -33,6 +33,14 @@ export default defineNuxtConfig({
 
   app: {
     rootId: 'app',
+    pageTransition: {
+      name: 'fade',
+      mode: 'out-in',
+    },
+    layoutTransition: {
+      name: 'fade',
+      mode: 'out-in',
+    },
   },
 
   site: {
