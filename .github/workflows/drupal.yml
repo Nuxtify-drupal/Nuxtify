@@ -30,13 +30,9 @@ jobs:
             ${{ runner.os }}-php-
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: Create Database
-        run: |
-          mkdir -p db
-          touch db/db.sqlite
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
           SIMPLETEST_DB: sqlite://localhost/sites/default/files/simpletest.sqlite
-          SIMPLETEST_BASE_URL: "http://localhost"
+          SIMPLETEST_BASE_URL: "http://127.0.0.1:8080"
           SYMFONY_DEPRECATIONS_HELPER: "disabled"
         run: ./vendor/bin/phpunit -c web/core web/profiles/contrib/nuxtify
