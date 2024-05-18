@@ -36,5 +36,5 @@ jobs:
           touch db/db.sqlite
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
-          DATABASE_URL: sqlite:///%kernel.project_dir%/data/database.sqlite
-        run: vendor/bin/phpunit .
+          DATABASE_URL: sqlite:///%kernel.project_dir%/db/db.sqlite
+        run: vendor/bin/phpunit -c web/core/phpunit.xml.dist web/profiles/contrib/nuxtify
