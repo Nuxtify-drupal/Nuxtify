@@ -39,4 +39,4 @@ jobs:
           DATABASE_URL: sqlite:///%kernel.project_dir%/db/db.sqlite
           SIMPLETEST_BASE_URL: "http://localhost"
           SYMFONY_DEPRECATIONS_HELPER: "disabled"
-        run: vendor/bin/phpunit -c web/core/phpunit.xml.dist web/profiles/contrib/nuxtify
+        run: ./vendor/bin/phpunit -c web/core web/profiles/contrib/nuxtify
