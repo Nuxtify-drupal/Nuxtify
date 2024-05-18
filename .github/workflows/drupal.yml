@@ -36,7 +36,7 @@ jobs:
           touch db/db.sqlite
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
-          SIMPLETEST_DB: sqlite:///home/runner/work/Nuxtify/Nuxtify/db/db.sqlite
+          SIMPLETEST_DB: sqlite://localhost/sites/default/files/simpletest.sqlite
           SIMPLETEST_BASE_URL: "http://localhost"
           SYMFONY_DEPRECATIONS_HELPER: "disabled"
         run: ./vendor/bin/phpunit -c web/core web/profiles/contrib/nuxtify
