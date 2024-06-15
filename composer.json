@@ -82,9 +82,6 @@
             ]
         },
         "patches": {
-            "drupal/layout_paragraphs": {
-                "3397222 - Widget is hidden if untranslatable fields are hidden": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/145.diff"
-            }
         }
     }
 }
