@@ -12,27 +12,27 @@
     "analyze": "nuxt analyze"
   },
   "dependencies": {
-    "vue": "^3.4.26",
-    "vue-router": "^4.3.2"
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.16.1",
-    "@iconify-json/mdi": "^1.1.66",
+    "@antfu/eslint-config": "^2.25.1",
+    "@iconify-json/mdi": "^1.1.68",
     "@nuxt/image": "^1.7.0",
-    "@nuxtjs/i18n": "^8.3.1",
+    "@nuxtjs/i18n": "^8.3.3",
     "@nuxtjs/seo": "2.0.0-rc.9",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "@vueuse/core": "^10.9.0",
-    "@vueuse/nuxt": "^10.9.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1",
     "eslint": "^8.57.0",
-    "nuxt": "^3.11.2",
-    "nuxt-graphql-middleware": "^4.0.0",
+    "nuxt": "^3.12.4",
+    "nuxt-graphql-middleware": "^4.1.1",
     "nuxt-icon": "1.0.0-beta.4",
     "nuxt-security": "^1.4.3",
     "nuxt-seo-experiments": "4.0.0-rc.6",
-    "pnpm": "^8.15.8",
-    "typescript": "^5.4.5",
-    "vue-tsc": "^1.8.27"
+    "pnpm": "^8.15.9",
+    "typescript": "^5.5.4",
+    "vue-tsc": "^2.0.29"
   },
   "pnpm": {
     "supportedArchitectures": {
